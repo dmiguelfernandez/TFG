@@ -25,7 +25,7 @@ if(rdd.size>0){printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DATOS RECOGIDOS CO
 
 val x = rdd.size
 
-val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/informe3.txt")
+val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/CODIGO/informe3.txt")
 
 val writer = new PrintWriter(informe)
 writer.write("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INICIO DEL INFORME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n")

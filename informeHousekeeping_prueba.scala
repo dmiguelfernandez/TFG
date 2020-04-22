@@ -15,7 +15,7 @@ case class Housekeeping(tm_type: String,time_received: String,batt_t_ext_tm: Int
 val rdd = sc.cassandraTable[Housekeeping]("upmsat2db", "housekeeping").collect()
 
 
-val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/version_1_con_informe/informe2.txt")
+val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/CODIGO/informe2.txt")
 
 val writer = new PrintWriter(informe)
 printf("\n\n\n")

@@ -15,7 +15,7 @@ case class EventError (tm_type: String,time_received: String,event :String,missi
 
 val rdd = sc.cassandraTable[EventError]("upmsat2db", "eventerror").collect();
 
-val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/informe1.txt")
+val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/CODIGO/informe1.txt")
 
 val writer = new PrintWriter(informe)
 

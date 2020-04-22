@@ -30,7 +30,7 @@ val x = rdd.size
 val xx = rdd2.size
 val xxx = rdd3.size
 
-val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/informe4.txt")
+val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/CODIGO/informe4.txt")
 
 val writer = new PrintWriter(informe)
 
