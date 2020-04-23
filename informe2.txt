@@ -1,0 +1,62 @@
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INICIO DEL INFORME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TIEMPOS ELEGIDOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+valorTiempo1 =  2020-04-10 19:03:43.023810
+
+valorTiempo2 =  2020-04-10 19:03:25.841663
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_T_EXT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+DESDE : 2020-04-10 19:03:43.023810 HASTA :  2020-04-10 19:03:25.841663
+
+  Fecha:  2020-04-10 19:03:43.023810 Valor fuera de rango de Batt_t_ext_tm:  -40ªC    ||  Hora del satélite:  608858
+  Fecha:  2020-04-10 19:03:37.929783 Valor fuera de rango de Batt_t_ext_tm:  -40ªC    ||  Hora del satélite:  622573
+  Fecha:  2020-04-10 19:03:30.870953 Valor fuera de rango de Batt_t_ext_tm:  -40ªC    ||  Hora del satélite:  609103
+  Fecha:  2020-04-10 19:03:25.841663 Valor fuera de rango de Batt_t_ext_tm:  -40ªC    ||  Hora del satélite:  609348
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_T_INT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+DESDE : 2020-04-10 19:03:43.023810 HASTA :  2020-04-10 19:03:25.841663
+
+  Fecha:  2020-04-10 19:03:43.023810 ||    Valor fuera de rango de Batt_t_int_tm:  -40ªC    ||  Hora del satélite:  608858
+  Fecha:  2020-04-10 19:03:37.929783 ||    Valor fuera de rango de Batt_t_int_tm:  -40ªC    ||  Hora del satélite:  622573
+  Fecha:  2020-04-10 19:03:30.870953 ||    Valor fuera de rango de Batt_t_int_tm:  -40ªC    ||  Hora del satélite:  609103
+  Fecha:  2020-04-10 19:03:25.841663 ||    Valor fuera de rango de Batt_t_int_tm:  -40ªC    ||  Hora del satélite:  609348
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT1_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+DESDE : 2020-04-10 19:03:43.023810 HASTA :  2020-04-10 19:03:25.841663
+
+  Fecha:  2020-04-10 19:03:43.023810 ||    Valor fuera de rango de Batt_tbat1_tm:  70ªC    ||  Hora del satélite:  608858
+  Fecha:  2020-04-10 19:03:37.929783 ||    Valor fuera de rango de Batt_tbat1_tm:  70ªC    ||  Hora del satélite:  622573
+  Fecha:  2020-04-10 19:03:30.870953 ||    Valor fuera de rango de Batt_tbat1_tm:  70ªC    ||  Hora del satélite:  609103
+  Fecha:  2020-04-10 19:03:25.841663 ||    Valor fuera de rango de Batt_tbat1_tm:  70ªC    ||  Hora del satélite:  609348
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT2_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+DESDE : 2020-04-10 19:03:43.023810 HASTA :  2020-04-10 19:03:25.841663
+
+  Fecha:  2020-04-10 19:03:43.023810 ||    Valor fuera de rango de Batt_tbat2_tm:  70ªC    ||  Hora del satélite:  608858
+  Fecha:  2020-04-10 19:03:37.929783 ||    Valor fuera de rango de Batt_tbat2_tm:  70ªC    ||  Hora del satélite:  622573
+  Fecha:  2020-04-10 19:03:30.870953 ||    Valor fuera de rango de Batt_tbat2_tm:  70ªC    ||  Hora del satélite:  609103
+  Fecha:  2020-04-10 19:03:25.841663 ||    Valor fuera de rango de Batt_tbat2_tm:  70ªC    ||  Hora del satélite:  609348
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT3_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+DESDE : 2020-04-10 19:03:43.023810 HASTA :  2020-04-10 19:03:25.841663
+
+  Fecha:  2020-04-10 19:03:43.023810 ||    Valor fuera de rango de Batt_tbat3_tm:  70ªC    ||  Hora del satélite:  608858
+  Fecha:  2020-04-10 19:03:37.929783 ||    Valor fuera de rango de Batt_tbat3_tm:  70ªC    ||  Hora del satélite:  622573
+  Fecha:  2020-04-10 19:03:30.870953 ||    Valor fuera de rango de Batt_tbat3_tm:  70ªC    ||  Hora del satélite:  609103
+  Fecha:  2020-04-10 19:03:25.841663 ||    Valor fuera de rango de Batt_tbat3_tm:  70ªC    ||  Hora del satélite:  609348
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MODOS DE OPERACION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+DESDE : 2020-04-10 19:03:43.023810 HASTA :  2020-04-10 19:03:25.841663
+
+  Fecha:  2020-04-10 19:03:43.023810 ||     Modo de operacion: NOMINAL         ||     Hora del satélite:  608858
+  Fecha:  2020-04-10 19:03:37.929783 ||     Modo de operacion: EXPERIMENT         ||     Hora del satélite:  622573
+  Fecha:  2020-04-10 19:03:30.870953 ||     Modo de operacion: NOMINAL         ||     Hora del satélite:  609103
+  Fecha:  2020-04-10 19:03:25.841663 ||     Modo de operacion: NOMINAL         ||     Hora del satélite:  609348
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FIN DEL INFORME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+

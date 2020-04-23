@@ -52,7 +52,7 @@ writer.write("valorTiempo2 =  "  + valorTiempo2 + "\n\n")
 printf("\n\n\n")
 
 
-//A LA ESPERA DEL SEQ QUE NO HE ENTENDIDO MUY BIEN
+
 
 
 for (y <- 0 until x) if (rdd(y).time_received == valorTiempo1) limiteInf = y;
@@ -67,59 +67,106 @@ writer.write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>EVENT ERROR<<<<<<<<<<<<<<<<
 writer.write(">>>>>>>>>>>>>>>>>>>>>>EVOLUCION GENERAL DE EVENTOS : TELEMETRIA<<<<<<<<<<<<<<<<<<<<<<\n\n      DESDE : " + valorTiempo1    +    "HASTA :  " + valorTiempo2 + "\n\n")
 
 
-for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && rdd(y).event == "SW_ERROR"){
-        printf("Fecha:   %s     ||     Evento:   %s                ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event + "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
 
-    }
 printf("\n\n\n")
 for (y <- 0 until x)
     if (y >= limiteInf && y <= limiteSup && (rdd(y).event == "CHANGEMODE")){
         if(rdd(y).parameter_value1 == "Nominal"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE NOMINAL A EXPERIMENT                ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE NOMINAL A EXPERIMENT  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE NOMINAL A EXPERIMENT                ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE NOMINAL A EXPERIMENT  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
         }else if(rdd(y).parameter_value1 == "Experiment"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE EXPERIMENT a NOMINAL                ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE EXPERIMENT a NOMINAL  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE EXPERIMENT a NOMINAL                ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE EXPERIMENT a NOMINAL  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
         }else if(rdd(y).parameter_value1 == "Safe"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE SAFE a NOMINAL                      ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE SAFE a NOMINAL    ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE SAFE a NOMINAL                      ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE SAFE a NOMINAL    ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
         }else if(rdd(y).parameter_value1 == "Initialization" && rdd(y).parameter_value2 == "Comissioning"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE INITIALIZATION a COMISSIONING       ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE INITIALIZATION a COMISSIONING  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE INITIALIZATION a COMISSIONING       ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE INITIALIZATION a COMISSIONING  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
         }else if(rdd(y).parameter_value1 == "Initialization" && rdd(y).parameter_value2 == "Safe"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE INITIALIZATION a SAFE               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE INITIALIZATION a SAFE    ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE INITIALIZATION a SAFE               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  -->DE INITIALIZATION a SAFE    ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
         }else if(rdd(y).parameter_value1 == "Comissioning" && rdd(y).parameter_value2 == "Safe"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE COMMISSIONING a SAFE                ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE COMMISSIONING a SAFE  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE COMMISSIONING a SAFE                ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE COMMISSIONING a SAFE  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
         }else if(rdd(y).parameter_value1 == "Safe" && rdd(y).parameter_value2 == "Commissioning"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE SAFE a COMMISSIONING               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE SAFE a COMMISSIONING  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
-      }else if(rdd(y).parameter_value1 == "Safe" && rdd(y).parameter_value2 == "Beacon"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE SAFE a BEACON               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE SAFE a BEACON  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE SAFE a COMMISSIONING               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE SAFE a COMMISSIONING  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).parameter_value1 == "Safe" && rdd(y).parameter_value2 == "Beacon"){
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE SAFE a BEACON               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE SAFE a BEACON  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
         }else if(rdd(y).parameter_value1 == "Beacon" && rdd(y).parameter_value2 == "Safe"){
-        printf("Fecha:   %s     ||     Evento:   %s  -->DE BEACON a SAFE               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE BEACON a SAFE  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+          printf("Fecha:   %s     ||     Evento:   %s  -->DE BEACON a SAFE               ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  -->DE BEACON a SAFE  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+}
+}
+
+
+
+for (y <- 0 until x)
+    if (y >= limiteInf && y <= limiteSup){
+        if(rdd(y).event == "SEPARATIONTIMEREXPIRED"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "RESET"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "INITIALIZATIONDONE"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "COMMISSIONINGDONE"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "TCINVALID"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "INITIALIZATIONERROR"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "BATTERYLOWWARNING"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "BATTERYCRITICALWARNING"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "BATTERYHIGHWARNING"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "PROTECTIONERROR"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "COMMISSIONINGERROR"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "LOSTCOMM"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "TCRECEIVED"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "NONTRUSTEDSOURCE"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "TIMEDTCINVALID"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "EXPERIMENTDONE"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "EXPERIMENTABORTED"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "SW_ERROR"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
+        }else if(rdd(y).event == "RADIOHWERROR"){
+          printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
+          writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
 }}
 
 
-printf("\n\n\n")
-for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && (rdd(y).event == "TCINVALID")){
-        printf("Fecha:   %s     ||     Evento:   %s         ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +   "  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
-}
 
-printf("\n\n\n")
-for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && (rdd(y).event == "COMMISSIONINGERROR")){
-        printf("Fecha:   %s     ||     Evento:   %s             EL SATELITE HA MODIFICADO SU ESTADO A OFF            ||     Hora del satélite: %s\n" , rdd(y).time_received, rdd(y).event, rdd(y).mission_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + "  ||  Evento:  "  +  rdd(y).event +  "  EL SATELITE HA MODIFICADO SU ESTADO A OFF  ||  Hora del satélite:  " + rdd(y).mission_time + "\n")
 
-}
 printf("\n")
 
 printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ANALISIS REALIZADO CORRECTAMENTE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n")

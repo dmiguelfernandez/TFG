@@ -389,33 +389,10 @@ writer.write("DESDE : " + valorTiempo1    +    " HASTA :  " + valorTiempo2 + "\n
 
 for (y <- 0 until x)
     if (y >= limiteInf && y <= limiteSup ){
-        if(rdd(y).current_operating_mode == "NOMINAL"){
-        printf("Fecha:   %s     ||     Modo de operacion: NOMINAL          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: NOMINAL          ||     Hora del satélite:  " + rdd(y).current_time + "\n")
+        printf("Fecha:   %s     ||     Modo de operacion: %s          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time,rdd(y).current_operating_mode)
+        writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: " + rdd(y).current_operating_mode +  "         ||     Hora del satélite:  " + rdd(y).current_time + "\n")}
 
-        }else if(rdd(y).current_operating_mode == "EXPERIMENT"){
-        printf("Fecha:   %s     ||     Modo de operacion: EXPERIMENT       ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: EXPERIMENT          ||     Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).current_operating_mode == "SAFE"){
-        printf("Fecha:   %s     ||     Modo de operacion: SAFE             ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: SAFE          ||     Hora del satélite:  " + rdd(y).current_time + "\n")
-
-        }else if(rdd(y).current_operating_mode == "INITIALIZATION"){
-        printf("Fecha:   %s     ||     Modo de operacion: INITIALIZATION   ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: INITIALIZATION          ||     Hora del satélite:  " + rdd(y).current_time + "\n")
-
-        }else if(rdd(y).current_operating_mode == "COMMISSIONG"){
-        printf("Fecha:   %s     ||     Modo de operacion: COMMISSIONG      ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: COMMISSIONG          ||     Hora del satélite:  " + rdd(y).current_time + "\n")
-
-        }else if(rdd(y).current_operating_mode == "OFF"){
-        printf("Fecha:   %s     ||     Modo de operacion: OFF              ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
-        writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: OFF          ||     Hora del satélite:  " + rdd(y).current_time + "\n")
-
-        }else {printf("DESCONOCIDO")
-          writer.write("DESCONOCIDO")}
-}
 
 printf("\n")
 

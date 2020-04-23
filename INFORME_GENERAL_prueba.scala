@@ -350,6 +350,22 @@ var contador1 = 0;
 var contador2 = 0;
 var contador3 = 0;
 var contador4 = 0;
+var contador5 = 0;
+var contador6 = 0;
+var contador7 = 0;
+var contador8 = 0;
+var contador9 = 0;
+var contador10 = 0;
+var contador11 = 0;
+var contador12 = 0;
+var contador13 = 0;
+var contador14 = 0;
+var contador15 = 0;
+var contador16 = 0;
+var contador17 = 0;
+var contador18 = 0;
+var contador19 = 0;
+
 for (y <- 0 until (x-1)){
     if(y >= linf2 && y <= lsup2 && (rdd(y).current_operating_mode != rdd((y+1)).current_operating_mode)){
         x7 = x7 + 1}}
@@ -363,12 +379,42 @@ for (y <- 0 until (xx-1)) {
 for (y <-0 until (xxx-1))
     if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "CHANGEMODE")){
         contador1 = contador1 + 1
-    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "SW_ERROR")){
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "SEPARATIONTIMEREXPIRED")){
         contador2 = contador2 + 1
-    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "TCINVALID")){
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "RESET")){
         contador3 = contador3 + 1
-    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "COMMISSIONINGERROR")){
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "INITIALIZATIONDONE")){
          contador4 = contador4 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "TCINVALID")){
+         contador4 = contador5 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "INITIALIZATIONERROR")){
+         contador4 = contador6 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "BATTERYLOWWARNING")){
+         contador4 = contador7 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "BATTERYCRITICALWARNING")){
+         contador4 = contador8 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "BATTERYHIGHWARNING")){
+         contador4 = contador9 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "PROTECTIONERROR")){
+         contador4 = contador10 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "COMMISSIONINGERROR")){
+         contador4 = contador11 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "LOSTCOMM")){
+         contador4 = contador12 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "TCRECEIVED")){
+         contador4 = contador13 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "NONTRUSTEDSOURCE")){
+         contador4 = contador14 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "TIMEDTCINVALID")){
+         contador4 = contador15 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "EXPERIMENTDONE")){
+         contador4 = contador16 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "EXPERIMENTABORTED")){
+         contador4 = contador17 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "SW_ERROR")){
+         contador4 = contador18 + 1
+    }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "RADIOHWERROR")){
+         contador4 = contador19 + 1
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -430,32 +476,9 @@ writer.write("\n>>>SE HAN CONTABILIZAD  " +   x7  + " CAMBIOS DE MODO DE OPERACI
 
 
 
-if(rdd(linf2).current_operating_mode == "NOMINAL"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: NOMINAL\n\n\n", rdd(linf2).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd(linf2).time_received  + " || Último modo de operacion: NOMINAL\n\n\n")
-}else if(rdd(linf2).current_operating_mode == "EXPERIMENT"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: EXPERIMENT\n\n\n", rdd(linf2).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd(linf2).time_received  + " || Último modo de operacion: EXPERIMENT\n\n\n")
+printf(">>>>>>Fecha: %s || Último modo de operacion: %s\n\n\n", rdd2(linf3).time_received, rdd2(linf3).current_operating_mode)
+writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: " + rdd2(linf3).current_operating_mode + "\n\n\n")
 
-}else if(rdd(linf2).current_operating_mode == "SAFE"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: SAFE\n\n\n", rdd(linf2).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd(linf2).time_received  + " || Último modo de operacion: SAFE\n\n\n")
-
-}else if(rdd(linf2).current_operating_mode == "INITIALIZATION"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: INITIALIZATION\n\n\n", rdd(linf2).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd(linf2).time_received  + " || Último modo de operacion: INITIALIZATION\n\n\n")
-
-}else if(rdd(linf2).current_operating_mode == "COMMISSIONG"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: COMMISSIONG\n\n\n", rdd(linf2).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd(linf2).time_received  + " || Último modo de operacion: COMMISSIONG\n\n\n")
-
-}else if(rdd(linf2).current_operating_mode == "SAFE"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: SAFE\n\n\n", rdd(linf2).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd(linf2).time_received  + " || Último modo de operacion: SAFE\n\n\n")
-
-}else {printf(">>>>>>DESCONOCIDO")
-  writer.write(">>>>>>DESCONOCIDO")
-}
 
 printf("\n\n------------------------------------------------------------------------------------------------------------------------------------------\nHELLO\n\n")
 printf(">>>SE HAN ALCANZADO %s VALORES LIMITE DE BATT_T_EXT_TM EN HELLO\n",x21)
@@ -479,33 +502,11 @@ writer.write("\n>>>SE HAN CONTABILIZAD  " +   x71  + " CAMBIOS DE MODO DE OPERAC
 
 
 
-if(rdd2(linf3).current_operating_mode == "NOMINAL"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: NOMINAL\n\n\n", rdd2(linf3).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: NOMINAL\n\n\n")
 
-}else if(rdd2(linf3).current_operating_mode == "EXPERIMENT"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: EXPERIMENT\n\n\n", rdd2(linf3).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: EXPERIMENT\n\n\n")
+printf(">>>>>>Fecha: %s || Último modo de operacion: %s\n\n\n", rdd2(linf3).time_received, rdd2(linf3).current_operating_mode)
+writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: " + rdd2(linf3).current_operating_mode + "\n\n\n")
 
-}else if(rdd2(linf3).current_operating_mode == "SAFE"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: SAFE\n\n\n", rdd2(linf3).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: SAFE\n\n\n")
 
-}else if(rdd2(linf3).current_operating_mode == "INITIALIZATION"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: INITIALIZATION\n\n\n", rdd2(linf3).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: INITIALIZATION\n\n\n")
-
-}else if(rdd2(linf3).current_operating_mode == "COMMISSIONG"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: COMMISSIONG\n\n\n", rdd2(linf3).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: COMMISSIONG\n\n\n")
-
-}else if(rdd2(linf3).current_operating_mode == "SAFE"){
-  printf(">>>>>>Fecha: %s || Último modo de operacion: SAFE\n\n\n", rdd2(linf3).time_received)
-  writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: SAFE\n\n\n")
-
-}else {printf(">>>>>>DESCONOCIDO")
-  writer.write(">>>>>>DESCONOCIDO")
-}
 
 
 
@@ -513,15 +514,48 @@ if(rdd2(linf3).current_operating_mode == "NOMINAL"){
 
 printf("\n\n------------------------------------------------------------------------------------------------------------------------------------------\nEVENTS\n\n")
 printf(">>>SE HAN CONTABILIZADO %s ESTADOS CHANGEMODE\n",contador1)
-printf(">>>SE HAN CONTABILIZADO %s ESTADOS SW_ERROR\n",contador2)
-printf(">>>SE HAN CONTABILIZADO %s ESTADOS TCINVALID\n",contador3)
-printf(">>>SE HAN CONTABILIZADO %s ESTADOS COMMISSIONINGERROR\n",contador4)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS SEPARATIONTIMEREXPIRED\n",contador2)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS RESET\n",contador3)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS COMMISSIONINGDONE\n",contador4)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS TCINVALID\n",contador5)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS INITIALIZATIONERROR\n",contador6)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS BATTERYLOWWARNING\n",contador7)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS BATTERYCRITICALWARNING\n",contador8)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS BATTERYHIGHWARNING\n",contador9)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS PROTECTIONERROR\n",contador10)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS COMMISSIONINGERROR\n",contador11)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS LOSTCOMM\n",contador12)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS TCRECEIVED\n",contador13)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS NONTRUSTEDSOURCE\n",contador14)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS TIMEDTCINVALID\n",contador15)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS EXPERIMENTDONE\n",contador16)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS EXPERIMENTABORTED\n",contador17)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS SW_ERROR\n",contador18)
+printf(">>>SE HAN CONTABILIZADO %s ESTADOS RADIOHWERROR\n",contador19)
+
+
 
 writer.write("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------\nEVENTS\n\n")
 writer.write(">>>SE HAN CONTABILIZADO  " +   contador1  + " ESTADOS CHANGEMODE\n")
-writer.write(">>>SE HAN CONTABILIZADO  " +   contador2  + " ESTADOS SW_ERROR\n")
-writer.write(">>>SE HAN CONTABILIZADO  " +   contador3  + " ESTADOS TCINVALID\n")
-writer.write(">>>SE HAN CONTABILIZADO  " +   contador4  + " ESTADOS COMMISSIONINGERROR\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador2  + " ESTADOS SEPARATIONTIMEREXPIRED\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador3  + " ESTADOS RESET\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador4  + " ESTADOS COMMISSIONINGDONE\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador5  + " ESTADOS TCINVALID\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador6  + " ESTADOS INITIALIZATIONERROR\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador7  + " ESTADOS BATTERYLOWWARNING\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador8  + " ESTADOS BATTERYCRITICALWARNING\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador9  + " ESTADOS BATTERYHIGHWARNING\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador10  + " ESTADOS PROTECTIONERROR\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador11 + " ESTADOS COMMISSIONINGERROR\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador12  + " ESTADOS LOSTCOMM\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador13  + " ESTADOS TCRECEIVED\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador14  + " ESTADOS NONTRUSTEDSOURCE\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador15  + " ESTADOS TIMEDTCINVALID\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador16  + " ESTADOS EXPERIMENTDONE\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador17  + " ESTADOS EXPERIMENTABORTED\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador18  + " ESTADOS SW_ERROR\n")
+writer.write(">>>SE HAN CONTABILIZADO  " +   contador19  + " ESTADOS RADIOHWERROR\n")
+
 
 
 
@@ -529,6 +563,9 @@ writer.write(">>>SE HAN CONTABILIZADO  " +   contador4  + " ESTADOS COMMISSIONIN
 printf("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------\n")
 printf("ULTIMO ESTADO DEL SATELITE:\n\n")
 printf("HORA: %s,     BATT_T_EXT_TM: %s,     BATT_T_INT_TM: %s,    BATT_TBAT1_TM: %s,    BATT_TBAT2_TM: %s,   BATT_TBAT3_TM: %s\n", rdd2(posUltimo).time_received, rdd2(posUltimo).batt_t_ext_tm, rdd2(posUltimo).batt_t_int_tm, rdd2(posUltimo).batt_tbat1_tm, rdd2(posUltimo).batt_tbat2_tm, rdd2(posUltimo).batt_tbat3_tm)
+printf("Modo de operacion: %s \n\n\n", rdd2(posUltimo).current_operating_mode)
+
+
 
 writer.write("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------\n")
 writer.write("ULTIMO ESTADO DEL SATELITE:\n\n")
