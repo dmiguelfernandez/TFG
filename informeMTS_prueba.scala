@@ -104,6 +104,7 @@ var duracion4 = duracion3 / 60
 printf("Duración del experimento: %s horas.\n", Math.round(duracion4))
 printf("Nombre del ensayo: %s.\n", rdd(0).current_essay)
 printf("Completado con éxito: %s.\n", rdd(0).is_at_essays)
+
 ///////////////////////////////////////////////////////////////////////////////////
 /*
 var nums: Map[String,String] = Map()
@@ -142,12 +143,12 @@ printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TIEMPOS ELEGIDOS<<<<<<<<<<<<<<<<<
 writer.write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TIEMPOS ELEGIDOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n")
 
 
-var t5 = "2020-03-31 18:16:58.788881"
-var t6 = "2020-04-09 11:51:48.289907"
+var t5 = "2020-03-31 17:42:35.629493"
+var t6 = "2020-04-09 11:37:39.892820"
 
 
-writer.write("valorTiempo1 =  " + valorTiempo1 + "\n\n")
-writer.write("valorTiempo2 =  "  + valorTiempo2 + "\n\n")
+writer.write("valorTiempo1 =  " + t5 + "\n\n")
+writer.write("valorTiempo2 =  "  + t6 + "\n\n")
 
 
 
@@ -157,6 +158,51 @@ var t6String : String = t6 + ""
 
 
 
+for (y <- 1 until x-1){
+
+        if (rdd(y).mts1 == true && rdd(y).mts2 == true && rdd(y).mts3 == true){
+            printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received, rdd(y-1).time_received, 5)
+            printf("Current step: %s\n", rdd(y).current_step)
+            printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
+
+        } else if (rdd(y).mts1 == false && rdd(y).mts2 == false && rdd(y).mts3 == false){
+
+          printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received, rdd(y-1).time_received, 5)
+          printf("Current step: %s\n", rdd(y).current_step)
+          printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
+
+        } else if (rdd(y).mts1 == true && rdd(y).mts2 == false && rdd(y).mts3 == false){
+
+          printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received, rdd(y-1).time_received, 5)
+          printf("Current step: %s\n", rdd(y).current_step)
+          printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
+
+        } else if (rdd(y).mts1 == false && rdd(y).mts2 == true && rdd(y).mts3 == false){
+
+          printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received, rdd(y-1).time_received, 5)
+          printf("Current step: %s\n", rdd(y).current_step)
+          printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
+
+        } else if (rdd(y).mts1 == true && rdd(y).mts2 == true && rdd(y).mts3 == false){
+
+          printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received, rdd(y-1).time_received, 5)
+          printf("Current step: %s\n", rdd(y).current_step)
+          printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
+
+        } else if (rdd(y).mts1 == false && rdd(y).mts2 == true && rdd(y).mts3 == true){
+
+          printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received, rdd(y-1).time_received, 5)
+          printf("Current step: %s\n", rdd(y).current_step)
+          printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
+
+        } else if (rdd(y).mts1 == false && rdd(y).mts2 == false && rdd(y).mts3 == true){
+
+          printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received, rdd(y-1).time_received, 5)
+          printf("Current step: %s\n", rdd(y).current_step)
+          printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
+        }
+
+    }
 
 
 /*
@@ -219,7 +265,6 @@ for (y <- 0 until x){
         if ((rdd(y).mts_p1tts1 < 1332 || rdd(y).mts_p1tts2 < 1332 || rdd(y).mts_p1tts3 < 1332 || rdd(y).mts_p1tts4 < 1332 || rdd(y).mts_p1tts5 < 1332 || rdd(y).mts_p1tts6 < 1332 )){
             printf("Fallo por congelamiento del amoníaco en              %s\n", rdd(y).time_received)}
             writer.write("Fallo por congelamiento del amoníaco en       \n"  +    rdd(y).time_received + "\n")
-
           }}
 
 
