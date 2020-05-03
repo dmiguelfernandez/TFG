@@ -62,49 +62,49 @@ for (z <- 1 until x) if (rdd(z).time_received == valorTiempo2) limiteSup = z;
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_T_EXT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_T_EXT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 printf("DESDE: %s                               HASTA: %s\n\n",valorTiempo2,valorTiempo1)
 
-writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_T_EXT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_T_EXT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 writer.write("DESDE : " + valorTiempo1    +    " HASTA :  " + valorTiempo2 + "\n\n")
 
 
 
 for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_ext_tm > 1772 || rdd(y).batt_t_ext_tm < 1765)){
-        if(rdd(y).batt_t_ext_tm <  1046){
+    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_ext_tm >= 866 || rdd(y).batt_t_ext_tm <= 1971)){
+        if(rdd(y).batt_t_ext_tm <= 1428){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:  -40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  -40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1046 && rdd(y).batt_t_ext_tm < 1194){
+        }else if(rdd(y).batt_t_ext_tm >1428 && rdd(y).batt_t_ext_tm <=1518){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:  -30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  -30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1194 && rdd(y).batt_t_ext_tm < 1265){
+        }else if(rdd(y).batt_t_ext_tm >1518 && rdd(y).batt_t_ext_tm <=1592){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:  -20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  -20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1265 && rdd(y).batt_t_ext_tm < 1336){
+        }else if(rdd(y).batt_t_ext_tm >1592 && rdd(y).batt_t_ext_tm <=1652){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:  -10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  -10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1336 && rdd(y).batt_t_ext_tm < 1407){
+        }else if(rdd(y).batt_t_ext_tm >1652 && rdd(y).batt_t_ext_tm <=1701){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   0ªC           ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  0ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1407 && rdd(y).batt_t_ext_tm < 1478){
+        }else if(rdd(y).batt_t_ext_tm >1701 && rdd(y).batt_t_ext_tm <=1741){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1478 && rdd(y).batt_t_ext_tm < 1549){
+        }else if(rdd(y).batt_t_ext_tm >1741 && rdd(y).batt_t_ext_tm <=1774){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1549 && rdd(y).batt_t_ext_tm < 1620){
+        }else if(rdd(y).batt_t_ext_tm >1774 && rdd(y).batt_t_ext_tm <=1803){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1620 && rdd(y).batt_t_ext_tm < 1710){
+        }else if(rdd(y).batt_t_ext_tm >1803 && rdd(y).batt_t_ext_tm <=1830){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1710 && rdd(y).batt_t_ext_tm < 1830){
+        }else if(rdd(y).batt_t_ext_tm >1830 && rdd(y).batt_t_ext_tm <=1859){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   50ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
-        }else if(rdd(y).batt_t_ext_tm > 1830 && rdd(y).batt_t_ext_tm < 1920){
+        }else if(rdd(y).batt_t_ext_tm >1859 && rdd(y).batt_t_ext_tm <=1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   60ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  60ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
-        }else if(rdd(y).batt_t_ext_tm > 1920){
+        }else if(rdd(y).batt_t_ext_tm >1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_ext_tm:   70ºC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " Valor fuera de rango de Batt_t_ext_tm:  70ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
         }else{
@@ -119,59 +119,59 @@ for (y <- 0 until x)
 ///////////////////////////////////////////////////////////////////////////////////
 
 
-printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_T_INT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_T_INT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 printf("DESDE: %s                               HASTA: %s\n\n",valorTiempo2,valorTiempo1)
 
-writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_T_INT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_T_INT_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 writer.write("DESDE : " + valorTiempo1    +    " HASTA :  " + valorTiempo2 + "\n\n")
 
 for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_int_tm > 1772 || rdd(y).batt_t_int_tm < 1765)){
-        if(rdd(y).batt_t_int_tm <  1046){
+    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_ext_tm >= 866 || rdd(y).batt_t_ext_tm <= 1971) ){
+        if(rdd(y).batt_t_int_tm <= 1428){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:  -40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  -40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1046 && rdd(y).batt_t_int_tm < 1194){
+        }else if(rdd(y).batt_t_int_tm >1428 && rdd(y).batt_t_int_tm <=1518){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:  -30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  -30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1194 && rdd(y).batt_t_int_tm < 1265){
+        }else if(rdd(y).batt_t_int_tm >1518 && rdd(y).batt_t_int_tm <=1592){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:  -20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  -20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1265 && rdd(y).batt_t_int_tm < 1336){
+        }else if(rdd(y).batt_t_int_tm >1592 && rdd(y).batt_t_int_tm <=1652){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:  -10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  -10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1336 && rdd(y).batt_t_int_tm < 1407){
+        }else if(rdd(y).batt_t_int_tm >1652 && rdd(y).batt_t_int_tm <=1701){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   0ªC           ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  0ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1407 && rdd(y).batt_t_int_tm < 1478){
+        }else if(rdd(y).batt_t_int_tm >1701 && rdd(y).batt_t_int_tm <=1741){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1478 && rdd(y).batt_t_int_tm < 1549){
+        }else if(rdd(y).batt_t_int_tm >1741 && rdd(y).batt_t_int_tm <=1774){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1549 && rdd(y).batt_t_int_tm < 1620){
+        }else if(rdd(y).batt_t_int_tm >1774 && rdd(y).batt_t_int_tm <=1803){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1620 && rdd(y).batt_t_int_tm < 1710){
+        }else if(rdd(y).batt_t_int_tm >1803 && rdd(y).batt_t_int_tm <=1830){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1710 && rdd(y).batt_t_int_tm < 1830){
+        }else if(rdd(y).batt_t_int_tm >1830 && rdd(y).batt_t_int_tm <=1859){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   50ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  50ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1830 && rdd(y).batt_t_int_tm < 1920){
+        }else if(rdd(y).batt_t_int_tm >1859 && rdd(y).batt_t_int_tm <=1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   60ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  60ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_t_int_tm > 1920){
+        }else if(rdd(y).batt_t_int_tm >1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_t_int_tm:   70ºC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_t_int_tm:  70ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
@@ -186,59 +186,59 @@ for (y <- 0 until x)
 
 ///////////////////////////////////////////////////////////////////////////////////
 
-printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT1_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_TBAT1_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 printf("DESDE: %s                               HASTA: %s\n\n",valorTiempo2,valorTiempo1)
 
-writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT1_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_TBAT1_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 writer.write("DESDE : " + valorTiempo1    +    " HASTA :  " + valorTiempo2 + "\n\n")
 
 for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_tbat1_tm > 1100 || rdd(y).batt_tbat1_tm < 1080)){
-        if(rdd(y).batt_tbat1_tm <  1046){
+    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_ext_tm >= 866 || rdd(y).batt_t_ext_tm <= 1971) ){
+        if(rdd(y).batt_tbat1_tm <=  1428){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:  -40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  -40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1046 && rdd(y).batt_tbat1_tm < 1194){
+        }else if(rdd(y).batt_tbat1_tm >1428 && rdd(y).batt_tbat1_tm <=1518){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:  -30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  -30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1194 && rdd(y).batt_tbat1_tm < 1265){
+        }else if(rdd(y).batt_tbat1_tm >1518 && rdd(y).batt_tbat1_tm <=1592){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:  -20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  -20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1265 && rdd(y).batt_tbat1_tm < 1336){
+        }else if(rdd(y).batt_tbat1_tm >1592 && rdd(y).batt_tbat1_tm <=1652){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:  -10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  -10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1336 && rdd(y).batt_tbat1_tm < 1407){
+        }else if(rdd(y).batt_tbat1_tm >1652 && rdd(y).batt_tbat1_tm <=1701){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   0ªC           ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  0ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1407 && rdd(y).batt_tbat1_tm < 1478){
+        }else if(rdd(y).batt_tbat1_tm >1701 && rdd(y).batt_tbat1_tm <=1741){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1478 && rdd(y).batt_tbat1_tm < 1549){
+        }else if(rdd(y).batt_tbat1_tm >1741 && rdd(y).batt_tbat1_tm <=1774){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1549 && rdd(y).batt_tbat1_tm < 1620){
+        }else if(rdd(y).batt_tbat1_tm >1774 && rdd(y).batt_tbat1_tm <=1803){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1620 && rdd(y).batt_tbat1_tm < 1710){
+        }else if(rdd(y).batt_tbat1_tm >1803 && rdd(y).batt_tbat1_tm <=1830){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1710 && rdd(y).batt_tbat1_tm < 1830){
+        }else if(rdd(y).batt_tbat1_tm >1830 && rdd(y).batt_tbat1_tm <=1859){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   50ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  50ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1830 && rdd(y).batt_tbat1_tm < 1920){
+        }else if(rdd(y).batt_tbat1_tm >1859 && rdd(y).batt_tbat1_tm <=1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   60ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  60ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat1_tm > 1920){
+        }else if(rdd(y).batt_tbat1_tm >1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat1_tm:   70ºC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat1_tm:  70ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
@@ -253,59 +253,59 @@ for (y <- 0 until x)
 
 ///////////////////////////////////////////////////////////////////////////////////
 
-printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT2_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_TBAT2_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 printf("DESDE: %s                               HASTA: %s\n\n",valorTiempo2,valorTiempo1)
 
-writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT2_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_TBAT2_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 writer.write("DESDE : " + valorTiempo1    +    " HASTA :  " + valorTiempo2 + "\n\n")
 
 for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_tbat2_tm > 1200 || rdd(y).batt_tbat2_tm < 1080)){
-        if(rdd(y).batt_tbat2_tm <  1046){
+    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_ext_tm >= 866 || rdd(y).batt_t_ext_tm <= 1971) ){
+        if(rdd(y).batt_tbat2_tm <= 1428){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:  -40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  -40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1046 && rdd(y).batt_tbat2_tm < 1194){
+        }else if(rdd(y).batt_tbat2_tm >1428 && rdd(y).batt_tbat2_tm <=1518){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:  -30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  -30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1194 && rdd(y).batt_tbat2_tm < 1265){
+        }else if(rdd(y).batt_tbat2_tm >1518 && rdd(y).batt_tbat2_tm <=1592){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:  -20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  -20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1265 && rdd(y).batt_tbat2_tm < 1336){
+        }else if(rdd(y).batt_tbat2_tm >1592 && rdd(y).batt_tbat2_tm <=1652){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:  -10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  -10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1336 && rdd(y).batt_tbat2_tm < 1407){
+        }else if(rdd(y).batt_tbat2_tm >1652 && rdd(y).batt_tbat2_tm <=1701){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   0ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  0ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1407 && rdd(y).batt_tbat2_tm < 1478){
+        }else if(rdd(y).batt_tbat2_tm >1701 && rdd(y).batt_tbat2_tm <=1741){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1478 && rdd(y).batt_tbat2_tm < 1549){
+        }else if(rdd(y).batt_tbat2_tm >1741 && rdd(y).batt_tbat2_tm <=1774){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1549 && rdd(y).batt_tbat2_tm < 1620){
+        }else if(rdd(y).batt_tbat2_tm >1774 && rdd(y).batt_tbat2_tm <=1803){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1620 && rdd(y).batt_tbat2_tm < 1710){
+        }else if(rdd(y).batt_tbat2_tm >1803 && rdd(y).batt_tbat2_tm <=1830){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1710 && rdd(y).batt_tbat2_tm < 1830){
+        }else if(rdd(y).batt_tbat2_tm >1830 && rdd(y).batt_tbat2_tm <=1859){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   50ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  50ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1830 && rdd(y).batt_tbat2_tm < 1920){
+        }else if(rdd(y).batt_tbat2_tm >1859 && rdd(y).batt_tbat2_tm <=1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   60ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  60ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat2_tm > 1920){
+        }else if(rdd(y).batt_tbat2_tm >1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat2_tm:   70ºC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat2_tm:  70ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
@@ -317,59 +317,59 @@ for (y <- 0 until x)
     }
 
 ///////////////////////////////////////////////////////////////////////////////////
-printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT3_TM  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_TBAT3_TM  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 printf("DESDE: %s                               HASTA: %s\n\n",valorTiempo2,valorTiempo1)
 
-writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BATT_TBAT3_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>BATT_TBAT3_TM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 writer.write("DESDE : " + valorTiempo1    +    " HASTA :  " + valorTiempo2 + "\n\n")
 
 for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_tbat3_tm > 1200 || rdd(y).batt_tbat3_tm < 1080)){
-        if(rdd(y).batt_tbat3_tm <  1046){
+    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_ext_tm >= 866 || rdd(y).batt_t_ext_tm <= 1971)){
+        if(rdd(y).batt_tbat3_tm <= 1428){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:  -40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  -40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1046 && rdd(y).batt_tbat3_tm < 1194){
+        }else if(rdd(y).batt_tbat3_tm >1428 && rdd(y).batt_tbat3_tm <=1518){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:  -30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  -30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1194 && rdd(y).batt_tbat3_tm < 1265){
+        }else if(rdd(y).batt_tbat3_tm >1518 && rdd(y).batt_tbat3_tm <=1592){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:  -20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  -20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1265 && rdd(y).batt_tbat3_tm < 1336){
+        }else if(rdd(y).batt_tbat3_tm >1592 && rdd(y).batt_tbat3_tm <=1652){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:  -10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  -10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1336 && rdd(y).batt_tbat3_tm < 1407){
+        }else if(rdd(y).batt_tbat3_tm >1652 && rdd(y).batt_tbat3_tm <=1701){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   0ªC           ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  0ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1407 && rdd(y).batt_tbat3_tm < 1478){
+        }else if(rdd(y).batt_tbat3_tm >1701 && rdd(y).batt_tbat3_tm <=1741){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   10ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  10ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1478 && rdd(y).batt_tbat3_tm < 1549){
+        }else if(rdd(y).batt_tbat3_tm >1741 && rdd(y).batt_tbat3_tm <=1774){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   20ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  20ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1549 && rdd(y).batt_tbat3_tm < 1620){
+        }else if(rdd(y).batt_tbat3_tm >1774 && rdd(y).batt_tbat3_tm <=1803){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   30ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  30ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1620 && rdd(y).batt_tbat3_tm < 1710){
+        }else if(rdd(y).batt_tbat3_tm >1803 && rdd(y).batt_tbat3_tm <=1830){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   40ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm: 40ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1710 && rdd(y).batt_tbat3_tm < 1830){
+        }else if(rdd(y).batt_tbat3_tm >1830 && rdd(y).batt_tbat3_tm <=1859){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   50ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  50ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1830 && rdd(y).batt_tbat3_tm < 1920){
+        }else if(rdd(y).batt_tbat3_tm >1859 && rdd(y).batt_tbat3_tm <=1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   60ªC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  60ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
-        }else if(rdd(y).batt_tbat3_tm > 1920){
+        }else if(rdd(y).batt_tbat3_tm >1920){
         printf("Fecha:   %s     ||     Valor fuera de rango de Batt_tbat3_tm:   70ºC          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||    Valor fuera de rango de Batt_tbat3_tm:  70ªC    ||  Hora del satélite:  " + rdd(y).current_time + "\n")
 
@@ -381,14 +381,14 @@ for (y <- 0 until x)
     }
 
 ///////////////////////////////////////////////////////////////////////////////////
-printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MODOS DE OPERACION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>MODOS DE OPERACION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 printf("DESDE: %s                               HASTA: %s\n\n",valorTiempo2,valorTiempo1)
 
-writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MODOS DE OPERACION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+writer.write("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>MODOS DE OPERACION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 writer.write("DESDE : " + valorTiempo1    +    " HASTA :  " + valorTiempo2 + "\n\n")
 
 for (y <- 0 until x)
-    if (y >= limiteInf && y <= limiteSup ){
+    if (y >= limiteInf && y <= limiteSup && (rdd(y).batt_t_ext_tm >= 866 || rdd(y).batt_t_ext_tm <= 1971) ){
         printf("Fecha:   %s     ||     Modo de operacion: %s          ||     Hora del satélite: %s\n" , rdd(y).time_received,rdd(y).current_time,rdd(y).current_operating_mode)
         writer.write("  Fecha:  " +    rdd(y).time_received  + " ||     Modo de operacion: " + rdd(y).current_operating_mode +  "         ||     Hora del satélite:  " + rdd(y).current_time + "\n")}
 

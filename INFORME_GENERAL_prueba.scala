@@ -35,12 +35,12 @@ val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA
 val writer = new PrintWriter(informe)
 
 
-var linf1 = 0;
-var lsup1 = 0;
-var linf2 = 0;
-var lsup2 = 0;
-var linf3 = 0;
-var lsup3 = 0;
+var linf1 = xxx;
+var lsup1 = xxx;
+var linf2 = x;
+var lsup2 = x;
+var linf3 = xx;
+var lsup3 = xx;
 var x2 = 0;
 var x21 = 0;
 var x3 = 0;
@@ -153,14 +153,9 @@ var t6 = z.select("FINAL HELLO", nums3)
 writer.write("\n------------------------------------------------------------------------------------------------------------------------------------------\nTIEMPOS ELEGIDOS\n\n")
 
 
-var t1 = "2020-04-01 16:40:37.4106811"
-var t2 = "2020-04-10 16:58:28.750851"
-
-var t3 = "2020-04-10 16:56:37.915644"
-var t4 = "2020-04-10 19:03:43.023810"
 
 var t5 = "2020-03-31 17:42:35.629493"
-var t6 = "2020-04-09 11:37:39.892820"
+var t6 = "2020-04-10 19:00:35.565359"
 
 
 
@@ -172,19 +167,12 @@ for (y <- 0 until rdd2.length-1){
 }
 
 
-val t1String : String = t1 + ""
-var t2String : String = t2 + ""
 
-val t3String : String = t3 + ""
-var t4String : String = t4 + ""
 
 val t5String : String = t5 + ""
 var t6String : String = t6 + ""
 
-writer.write("valorTiempo1 =  " + t1 + "\n")
-writer.write("valorTiempo2 =  "  + t2 + "\n")
-writer.write("valorTiempo3 =  " + t3 + "\n")
-writer.write("valorTiempo4 =  "  + t4 + "\n")
+
 writer.write("valorTiempo5 =  " + t5 + "\n")
 writer.write("valorTiempo6 =  "  + t6 + "\n")
 
@@ -192,14 +180,20 @@ writer.write("valorTiempo6 =  "  + t6 + "\n")
 
 
 
+
 writer.write("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------\nDATOS GENERALES\n\n")
 
-for (y <- 0 until x) if (rdd(y).time_received == t3){ lsup2 = y;}
-for (y <- 0 until x) if (rdd(y).time_received == t4){ linf2 = y;}
-for (y <- 0 until xx) if (rdd2(y).time_received == t5){ lsup3 = y;}
-for (y <- 0 until xx) if (rdd2(y).time_received == t6){ linf3 = y;}
-for (y <- 0 until xxx) if (rdd3(y).time_received == t1){ lsup1 = y;}
-for (y <- 0 until xxx) if (rdd3(y).time_received == t2){ linf1 = y;}
+for (y <- 0 until x) if (rdd(y).time_received > t5){ lsup2 = y;}
+for (y <- (0 until x).reverse) if (rdd(y).time_received < t6){ linf2 = y;}
+for (y <- 0 until xx) if (rdd2(y).time_received >= t5){ lsup3 = y;}
+for (y <- (0 until xx).reverse) if (rdd2(y).time_received <= t6){ linf3 = y;}
+for (y <- 0 until xxx) if (rdd3(y).time_received > t5){ lsup1 = y;}
+for (y <- (0 until xxx).reverse) if (rdd3(y).time_received < t6){ linf1 = y;}
+
+
+printf("%s a %s\n",linf1,lsup1)
+printf("%s a %s\n",linf2,lsup2)
+printf("%s a %s\n",linf3,lsup3)
 
 
 
@@ -230,14 +224,14 @@ printf("\n\n\n")
 
 
 for (y <- 0 until x)
-    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_t_ext_tm > 1768 || rdd(y).batt_t_ext_tm < 1762)){
+    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_t_ext_tm >= 866 || rdd(y).batt_t_ext_tm <= 1971)){
         x2 = x2 + 1
     }
 
 
 
 for (y <- 0 until xx)
-    if (y >= linf3 && y <= lsup3 && (rdd2(y).batt_t_ext_tm > 1770 || rdd2(y).batt_t_ext_tm < 1760)){
+    if (y >= linf3 && y <= lsup3 && (rdd2(y).batt_t_ext_tm >= 866 || rdd2(y).batt_t_ext_tm <= 1971)){
         x21 = x21 + 1
     }
 
@@ -256,12 +250,12 @@ collection2.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fueraran
 */
 
 for (y <- 0 until x)
-    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_t_int_tm > 1772 || rdd(y).batt_t_int_tm < 1765)){
+    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_t_int_tm >= 866 || rdd(y).batt_t_int_tm <= 1971)){
         x3 = x3 + 1
     }
 
 for (y <- 1 until xx)
-    if (y >= linf3 && y <= lsup3 &&  (rdd2(y).batt_t_int_tm > 1770 || rdd2(y).batt_t_int_tm < 1760)){
+    if (y >= linf3 && y <= lsup3 &&  (rdd2(y).batt_t_int_tm >= 866 || rdd2(y).batt_t_int_tm <= 1971)){
         x31 = x31 + 1
         }
 
@@ -278,12 +272,12 @@ collection4.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fueraran
 */
 
 for (y <- 1 until x)
-    if (y >= linf2 && y <= lsup2 &&  (rdd(y).batt_tbat1_tm < 1110 || rdd(y).batt_tbat1_tm > 1142)){
+    if (y >= linf2 && y <= lsup2 &&  (rdd(y).batt_tbat1_tm <= 866 || rdd(y).batt_tbat1_tm >= 1971)){
         x4 = x4 + 1
         }
 
 for (y <- 1 until xx)
-    if (y >= linf3 && y <= lsup3 &&   (rdd2(y).batt_tbat1_tm < 1110 || rdd2(y).batt_tbat1_tm > 1145)){
+    if (y >= linf3 && y <= lsup3 &&   (rdd2(y).batt_tbat1_tm <= 866 || rdd2(y).batt_tbat1_tm >= 1971)){
         x41 = x41 + 1
         }
 
@@ -302,12 +296,12 @@ collection6.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fueraran
 
 
 for (y <- 1 until x)
-    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_tbat2_tm < 1115 || rdd(y).batt_tbat2_tm > 1135)){
+    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_tbat2_tm <= 866 || rdd(y).batt_tbat2_tm >= 1971)){
         x5 = x5 + 1
     }
 
 for (y <- 1 until xx)
-    if (y >= linf3 && y <= lsup3 && (rdd2(y).batt_tbat2_tm < 1110 || rdd2(y).batt_tbat2_tm > 1145)){
+    if (y >= linf3 && y <= lsup3 && (rdd2(y).batt_tbat2_tm <= 866 || rdd2(y).batt_tbat2_tm >= 1971)){
         x51 = x51 + 1
     }
 
@@ -324,12 +318,12 @@ collection8.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fueraran
 
 
 for (y <- 1 until x)
-    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_tbat3_tm < 1110 || rdd(y).batt_tbat3_tm > 1142)){
+    if (y >= linf2 && y <= lsup2 && (rdd(y).batt_tbat3_tm <= 866 || rdd(y).batt_tbat3_tm >= 1971)){
         x6 = x6 + 1
         }
 
 for (y <- 1 until xx)
-    if (y >= linf3 && y <= lsup3 && (rdd2(y).batt_tbat3_tm < 1110 || rdd2(y).batt_tbat3_tm > 1145)){
+    if (y >= linf3 && y <= lsup3 && (rdd2(y).batt_tbat3_tm <= 866 || rdd2(y).batt_tbat3_tm >= 1971)){
         x61 = x61 + 1
     }
 
@@ -433,7 +427,7 @@ for (y <- 0 until (xx-1))
 
 var aux = 0;
 for (y <- 0 until (xxx-1))
-    if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "CHANGEMODE")){
+    if (y >= linf1 && y <= lsup1){
         aux = aux + 1
         }
 
