@@ -9,13 +9,14 @@ import java.time.format.DateTimeFormatter
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import scala.util.control._
+import java.util.concurrent.TimeUnit
 import java.io.File
 import java.io.PrintWriter
 
 
 case class Housekeeping(tm_type: String,time_received: String,batt_t_ext_tm: Int,batt_t_int_tm : Int,batt_tbat1_tm : Int,batt_tbat2_tm : Int,batt_tbat3_tm : Int,batt_vbat_tm : Int,batt_vbus_tm : Int,battery_status: String,boom1_vbus : Boolean,boom2_vbus : Boolean,current_operating_mode: String,current_time : Int,das_n15v : Boolean,das_p15v : Boolean,das_p3v : Boolean,das_p5v : Boolean,ebox_t_ext_tm : Int,ebox_t_int_tm : Int,mgm1_p5v : Boolean,mgm1_t_tm : Int,mgm1_x_tm : Int,mgm1_y_tm : Int,mgm1_z_tm : Int,mgm2_p5v : Boolean,mgm2_t_tm : Int,mgm2_x_tm : Int,mgm2_y_tm : Int,mgm2_z_tm : Int,mgm3_n15v : Boolean,mgm3_p15v : Boolean,mgm3_t_tm : Int,mgm3_x_tm : Int,mgm3_y_tm : Int,mgm3_z_tm : Int,mgt_tx_tm : Int,mgt_x_vbus : Boolean,modem_t_tr_tm : Int,modem_vbus : Boolean,mts_p1tts1_tm : Int,mts_p1tts2_tm : Int,mts_p1tts3_tm : Int,mts_p1tts4_tm : Int,mts_p1tts5_tm : Int,mts_p1tts6_tm : Int,mts_vbus : Boolean,n15v_tm : Int,obc_t_tm : Int,p15v_tm : Int,p3v3_tm : Int, p5v_tm : Int,pdu_ivbus_tm : Int,pdu_p3v3 : Boolean,pdu_p5v : Boolean,psu_in15v_tm : Int,psu_ip15v_tm : Int,psu_ip3v3_tm : Int,psu_ip5v_tm : Int,psu_t_tm : Int,pv_ispxn_tm : Int,pv_ispxp_tm : Int,pv_ispyn_tm : Int,pv_ispyp_tm : Int,pv_ispzp_tm : Int,pv_tpsxn_tm : Int,pv_tpsxp_tm : Int,pv_tpsyn_tm : Int,pv_tpsyp_tm : Int,pv_tpszp_tm : Int,rw1_t_tm : Int,rw2_t_tm : Int,rw_p5v : Boolean,rw_vbus : Boolean,sequencecount : Int,sma_sb01 : Boolean,sma_sb02 : Boolean,ss6_xn_tm : Int,ss6_xp_tm : Int,ss6_yn_tm : Int,ss6_yp_tm : Int,ss6_zn_tm : Int,ss6_zp_tm : Int,temp_a_p5v : Boolean,temp_b_p5v : Boolean,tm_id : BigInt,ttc_stat : Boolean)
 
-case class Hello(tm_type: String,time_received: String,batt_t_ext_tm: Int,batt_t_int_tm : Int,batt_tbat1_tm : Int,batt_tbat2_tm : Int,batt_tbat3_tm : Int,batt_vbat_tm : Int,batt_vbus_tm : Int,battery_status: String,boom1_vbus : Boolean,boom2_vbus : Boolean,current_operating_mode: String,current_time : Int,das_n15v : Boolean,das_p15v : Boolean,das_p3v : Boolean,das_p5v : Boolean,ebox_t_ext_tm : Int,ebox_t_int_tm : Int,mgm1_p5v : Boolean,mgm1_t_tm : Int,mgm1_x_tm : Int,mgm1_y_tm : Int,mgm1_z_tm : Int,mgm2_p5v : Boolean,mgm2_t_tm : Int,mgm2_x_tm : Int,mgm2_y_tm : Int,mgm2_z_tm : Int,mgm3_n15v : Boolean,mgm3_p15v : Boolean,mgm3_t_tm : Int,mgm3_x_tm : Int,mgm3_y_tm : Int,mgm3_z_tm : Int,mgt_tx_tm : Int,mgt_x_vbus : Boolean,modem_t_tr_tm : Int,modem_vbus : Boolean,mts_p1tts1_tm : Int,mts_p1tts2_tm : Int,mts_p1tts3_tm : Int,mts_p1tts4_tm : Int,mts_p1tts5_tm : Int,mts_p1tts6_tm : Int,mts_vbus : Boolean,n15v_tm : Int,obc_t_tm : Int,p15v_tm : Int,p3v3_tm : Int, p5v_tm : Int,pdu_ivbus_tm : Int,pdu_p3v3 : Boolean,pdu_p5v : Boolean,psu_in15v_tm : Int,psu_ip15v_tm : Int,psu_ip3v3_tm : Int,psu_ip5v_tm : Int,psu_t_tm : Int,pv_ispxn_tm : Int,pv_ispxp_tm : Int,pv_ispyn_tm : Int,pv_ispyp_tm : Int,pv_ispzp_tm : Int,pv_tpsxn_tm : Int,pv_tpsxp_tm : Int,pv_tpsyn_tm : Int,pv_tpsyp_tm : Int,pv_tpszp_tm : Int,rw1_t_tm : Int,rw2_t_tm : Int,rw_p5v : Boolean,rw_vbus : Boolean,sequencecount : Int,sma_sb01 : Boolean,sma_sb02 : Boolean,ss6_xn_tm : Int,ss6_xp_tm : Int,ss6_yn_tm : Int,ss6_yp_tm : Int,ss6_zn_tm : Int,ss6_zp_tm : Int,temp_a_p5v : Boolean,temp_b_p5v : Boolean,tm_id : BigInt,ttc_stat : Boolean)
+case class Hello(tm_type: String,time_received: String,batt_t_ext_tm: Int,batt_t_int_tm : Int,batt_tbat1_tm : Int,batt_tbat2_tm : Int,batt_tbat3_tm : Int,batt_vbat_tm : Int,batt_vbus_tm : Int,battery_status: String,boom1_vbus : Boolean,boom2_vbus : Boolean,current_operating_mode: String,current_time : Int,das_n15v : Boolean,das_p15v : Boolean,das_p3v : Boolean,das_p5v : Boolean,ebox_t_ext_tm : Int,ebox_t_int_tm : Int,mgm1_p5v : Boolean,mgm1_t_tm : Int,mgm1_x_tm : Int,mgm1_y_tm : Int,mgm1_z_tm : Int,mgm2_p5v : Boolean,mgm2_t_tm : Int,mgm2_x_tm : Int,mgm2_y_tm : Int,mgm2_z_tm : Int,mgm3_n15v : Boolean,mgm3_p15v : Boolean,mgm3_t_tm : Int,mgm3_x_tm : Int,mgm3_y_tm : Int,mgm3_z_tm : Int,mgt_tx_tm : Int,mgt_x_vbus : Boolean,mission_time : Int,modem_t_tr_tm : Int,modem_vbus : Boolean,mts_p1tts1_tm : Int,mts_p1tts2_tm : Int,mts_p1tts3_tm : Int,mts_p1tts4_tm : Int,mts_p1tts5_tm : Int,mts_p1tts6_tm : Int,mts_vbus : Boolean,n15v_tm : Int,obc_t_tm : Int,p15v_tm : Int,p3v3_tm : Int, p5v_tm : Int,pdu_ivbus_tm : Int,pdu_p3v3 : Boolean,pdu_p5v : Boolean,psu_in15v_tm : Int,psu_ip15v_tm : Int,psu_ip3v3_tm : Int,psu_ip5v_tm : Int,psu_t_tm : Int,pv_ispxn_tm : Int,pv_ispxp_tm : Int,pv_ispyn_tm : Int,pv_ispyp_tm : Int,pv_ispzp_tm : Int,pv_tpsxn_tm : Int,pv_tpsxp_tm : Int,pv_tpsyn_tm : Int,pv_tpsyp_tm : Int,pv_tpszp_tm : Int,rw1_t_tm : Int,rw2_t_tm : Int,rw_p5v : Boolean,rw_vbus : Boolean,sequencecount : Int,sma_sb01 : Boolean,sma_sb02 : Boolean,ss6_xn_tm : Int,ss6_xp_tm : Int,ss6_yn_tm : Int,ss6_yp_tm : Int,ss6_zn_tm : Int,ss6_zp_tm : Int,temp_a_p5v : Boolean,temp_b_p5v : Boolean,tm_id : BigInt,ttc_stat : Boolean)
 
 case class EventError (tm_type: String,time_received: String,event :String,mission_time: Int,parameter_id: Int,parameter_value1: String,parameter_value2: String,sequencecount: Int,tm_id: BigInt);
 
@@ -30,7 +31,7 @@ val x = rdd.size
 val xx = rdd2.size
 val xxx = rdd3.size
 
-val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/CODIGO/informe4.txt")
+val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA/CODIGO/INFORME_GENERAL.txt")
 
 val writer = new PrintWriter(informe)
 
@@ -84,6 +85,16 @@ def convertStringToDate(s: String): Date = {
         val dateFormat = new SimpleDateFormat(DATE_FORMAT)
         dateFormat.parse(s)
 }
+
+def convertLongToString(date: Long): String = {
+       val d = new Date(date * 1000L)
+       new SimpleDateFormat(DATE_FORMAT).format(d)
+   }
+
+def convertStringToLong(date: String): Long = {
+      (convertStringToDate(date).getTime())/1000
+
+  }
 //-------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -154,17 +165,29 @@ writer.write("\n----------------------------------------------------------------
 
 
 
-var t5 = "2020-03-31 17:42:35.629493"
-var t6 = "2020-04-10 19:00:35.565359"
-
-
+var t5 = "2020-05-09 10:31:16.664029"
+var t6 = "2020-05-09 14:44:09.060707"
 
 var posUltimo = 0;
+var reftimem = 0;
+var reftimet = "";
+
 for (y <- 0 until rdd2.length-1){
-    if(rdd2(y).time_received == t6){
+    if(rdd3(y).time_received == t6){
         posUltimo = y
+        reftimem = rdd3(y).mission_time
+        reftimet = rdd3(y).time_received
+
     }
 }
+
+def diftiempos(time : Int): String = {
+        val f  = reftimem - time
+        val f2 = ((convertStringToDate(reftimet).getTime())/1000) - ((f/4).toLong)
+        convertLongToString(f2)
+
+
+    }
 
 
 
@@ -200,9 +223,9 @@ printf("%s a %s\n",linf3,lsup3)
 var orbitas = ArrayBuffer[Int]()
 var iteracion = 0;
 printf("\n\n\n\n")
-for (y <- (2 until indices.length-1 by 2).reverse){
-    var auxx = ((((convertStringToDate(tiemposHello(indices(y-1))).getTime() - convertStringToDate(tiemposHello(indices(y))).getTime()) / (60 * 60 * 1000) / 1.61)))
-    orbitas += (Math.round(auxx)).toInt
+for (y <- (1 until indices.size by 2).reverse){
+    var auxx = ((rdd2(indices(y-1)).mission_time - rdd2(indices(y)).mission_time) / (60 * 60 * 4) / 1.61)
+    orbitas += (auxx).toInt
     printf("NUMERO DE ORBITAS ENTRE %s   -   %s: %s\n", rdd2(indices(y)).time_received, rdd2(indices(y-1)).time_received,orbitas(iteracion))
     writer.write("\n NUMERO DE ORBITAS ENTRE  " +    rdd2(indices(y)).time_received  + "-" + rdd2(indices(y-1)).time_received + ":" + orbitas(iteracion) + "/n/n")
 
@@ -370,7 +393,7 @@ for (y <- 0 until (xx-1)) {
 
 
 
-for (y <-0 until (xxx-1))
+for (y <-0 until (xxx))
     if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "CHANGEMODE")){
         contador1 = contador1 + 1
     }else if (y >= linf1 && y <= lsup1 && (rdd3(y).event == "SEPARATIONTIMEREXPIRED")){
@@ -414,19 +437,19 @@ for (y <-0 until (xxx-1))
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var aux3 = 0;
-for (y <- 0 until (x-1))
+for (y <- 0 until (x))
     if (y >= linf2 && y <= lsup2 ){
         aux3 = aux3 + 1
         }
 
 var aux2 = 0;
-for (y <- 0 until (xx-1))
+for (y <- 0 until (xx))
     if (y >= linf3 && y <= lsup3 ){
         aux2 = aux2 + 1
         }
 
 var aux = 0;
-for (y <- 0 until (xxx-1))
+for (y <- 0 until (xxx))
     if (y >= linf1 && y <= lsup1){
         aux = aux + 1
         }
