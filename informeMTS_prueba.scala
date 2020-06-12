@@ -40,40 +40,6 @@ val informe = new File("C:/Users/chech/Desktop/TFG/VERSION_NUEVA/PROGRAMAS_SCALA
 val writer = new PrintWriter(informe)
 writer.write("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INICIO DEL INFORME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n")
 
-
-val tiemposMTS = ArrayBuffer[String]()
-for (y <- 0 until x){
-    tiemposMTS += rdd(y).time_received
-}
-
-val tiemposHello = ArrayBuffer[String]()
-for (y <- 0 until xx){
-    tiemposHello += rdd2(y).time_received
-}
-
-val indices = ArrayBuffer[Int]()
-
-indices += 0
-for (y <- 0 until tiemposHelloLength-1){
-    if (((convertStringToDate(tiemposHello(y)).getTime() - convertStringToDate(tiemposHello(y+1)).getTime())/(60 * 60 * 1000)) > 1) {
-    indices += y
-    indices += y+1
-    }
-}
-indices += xx-1
-//--------------------------------------------------------------------------------------------------------------------------------------
-
-printf("COBERTURAS DISPONIBLES PARA ANALISIS: %s \n\n", indices.length/2)
-
-writer.write("COBERTURAS DISPONIBLES PARA ANALISIS:  " + indices.length/2 + "\n\n")
-
-
-
-printf("HELLO:\n")
-for (y <- (0 until indices.length-1 by 2).reverse){
-    printf("%s   -   %s\n",rdd2(indices(y+1)).time_received, rdd2(indices(y)).time_received)}
-
-
 //------------------------------------------------------------------
 val DATE_FORMAT = "yyyy-MM-dd HH:mm:ss"
 
@@ -98,6 +64,41 @@ def diftiempos1(date1: Long, date2: Long): Long = {
   }
 
 //-------------------------------------------------------------------
+
+val tiemposMTS = ArrayBuffer[String]()
+for (y <- 0 until x){
+    tiemposMTS += rdd(y).time_received
+}
+
+val tiemposHello = ArrayBuffer[String]()
+for (y <- 0 until xx){
+    tiemposHello += rdd2(y).time_received
+}
+
+val indices = ArrayBuffer[Int]()
+
+indices += 0
+for (y <- 0 until tiemposHelloLength - 1){
+    if (((convertStringToDate(tiemposHello(y)).getTime() - convertStringToDate(tiemposHello(y+1)).getTime())/(60 * 60 * 1000)) > 1) {
+    indices += y
+    indices += y+1
+    }
+}
+indices += xx-1
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+printf("COBERTURAS DISPONIBLES PARA ANALISIS: %s \n\n", indices.length/2)
+
+writer.write("COBERTURAS DISPONIBLES PARA ANALISIS:  " + indices.length/2 + "\n\n")
+
+
+
+printf("HELLO:\n")
+for (y <- (0 until indices.length-1 by 2).reverse){
+    printf("%s   -   %s\n",rdd2(indices(y+1)).time_received, rdd2(indices(y)).time_received)}
+
+
+
 
 var tiemposMTSLength = tiemposMTS.length
 var tiemposHelloLength = tiemposHello.length
@@ -285,12 +286,12 @@ for (a <- ensayos(y) until ensayos(y+1)){
   for (y <- 0 until x){
       if ((convertStringToDate(tiemposMTS(y)).getTime() >= convertStringToDate(t5String).getTime()) && (convertStringToDate(tiemposMTS(y)).getTime() <= convertStringToDate(t6String).getTime())){
         if((convertStringToDate(tiemposMTS(y)).getTime() <= convertStringToDate(t2String).getTime()) && (convertStringToDate(tiemposMTS(y)).getTime() >= convertStringToDate(t1String).getTime())){
-          if ((rdd(y).mts_p1tts1 > 1850 || rdd(y).mts_p1tts2 > 1850 || rdd(y).mts_p1tts3 > 1850 || rdd(y).mts_p1tts4 > 1850 || rdd(y).mts_p1tts5 > 1850 || rdd(y).mts_p1tts6 > 1850 )){
-              printf("Fallo por sobrecalentamiento del evaporador en el MTS recibido el    %s\n", rdd(y).time_received)
-              writer.write("Fallo por sobrecalentamiento del evaporador en el MTS recibido el       \n"  +    rdd(y).time_received + "\n")}
-          if ((rdd(y).mts_p1tts1 < 1332 || rdd(y).mts_p1tts2 < 1332 || rdd(y).mts_p1tts3 < 1332 || rdd(y).mts_p1tts4 < 1332 || rdd(y).mts_p1tts5 < 1332 || rdd(y).mts_p1tts6 < 1332 )){
-              printf("Fallo por congelamiento del amoníaco en el MTS recibido el              %s\n",  rdd(y).time_received)
-              writer.write("Fallo por congelamiento del amoníaco en el MTS recibido el       \n"  +     rdd(y).time_received + "\n")}
+          if ((rdd(y).mts_p1tts1 > 1920 || rdd(y).mts_p1tts2 > 1920 || rdd(y).mts_p1tts3 > 1920 || rdd(y).mts_p1tts4 > 1920 || rdd(y).mts_p1tts5 > 1920 || rdd(y).mts_p1tts6 > 1920 )){
+              printf("Fallo por sobrecalentamiento del evaporador en el MTS el %s recibido el %s\n", diftiempos(rdd(y).mission_clock), rdd(y).time_received)
+              writer.write("Fallo por sobrecalentamiento del evaporador en el MTS  el       \n"  +    diftiempos(rdd(y).mission_clock)  + " recibido el " + rdd(y).time_received + " \n ")}
+          if ((rdd(y).mts_p1tts1 < 1045 || rdd(y).mts_p1tts2 < 1045 || rdd(y).mts_p1tts3 < 1045 || rdd(y).mts_p1tts4 < 1045 || rdd(y).mts_p1tts5 < 1045 || rdd(y).mts_p1tts6 < 1045 )){
+              printf("Fallo por congelamiento del amoníaco en el MTS  el %s recibido el %s\n",  diftiempos(rdd(y).mission_clock),rdd(y).time_received)
+              writer.write("Fallo por congelamiento del amoníaco en el MTS  el \n"  +    diftiempos(rdd(y).mission_clock) + " recibido el " + rdd(y).time_received + "\n")}
 
             }}}
 
@@ -310,61 +311,57 @@ for (a <- ensayos(y) until ensayos(y+1)){
   writer.write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>PASOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n")
 
 
-  for(d <- (ensayos(y) until ensayos(y+1))){
+  var comienzo = ensayos(y+1)
+  var terminar = 0
+  var duracion_pasos = 0
 
-    var comienzo = ensayos(y+1)
-    var terminar = ensayos(y)
-    var duracion_pasos = 0
-
-
-
+  for(d <- (ensayos(y) until ensayos(y+1)).reverse){
 
     if (rdd(d).current_step != rdd(d+1).current_step){
 
-      var fff = Math.abs(rdd(comienzo).mission_clock - rdd(d).mission_clock)
-      duracion_pasos = (fff)/(4*60*60)
+        terminar = d
 
-      terminar = d
+      var fff = Math.abs(rdd(comienzo).mission_clock - rdd(terminar).mission_clock)
+      duracion_pasos = (fff)/(4*60)
 
-      printf("Paso actual: %s\n\n",rdd(d).current_step)
-      printf("Comienzo: %s\n\n",diftiempos(rdd(d).mission_clock))
+      printf("Paso actual: %s\n\n",rdd(terminar).current_step)
+      printf("Comienzo: %s\n\n",diftiempos(rdd(comienzo).mission_clock))
       printf("Final: %s\n\n",diftiempos(rdd(terminar).mission_clock))
-      printf("Duración: %s horas\n\n",duracion_pasos)
+      printf("Duración: %s minutos\n\n",duracion_pasos)
 
-      writer.write("Paso actual:  "  + rdd(d).current_step + "\n\n")
-      writer.write("Comienzo:  "  + diftiempos(rdd(d).mission_clock) + "\n\n")
+      writer.write("Paso actual:  "  + rdd(comienzo).current_step + "\n\n")
+      writer.write("Comienzo:  "  + diftiempos(rdd(comienzo).mission_clock) + "\n\n")
       writer.write("Final:  "  + diftiempos(rdd(terminar).mission_clock) + "\n\n")
       writer.write("Duración:  "  + duracion_pasos + " horas \n\n")
 
       printf("HEATERS \n\n")
       writer.write("HEATERS \n\n")
 
-      if (rdd(y).mts1 == false && rdd(y).mts2 == false &&  rdd(y).mts3 == false){
+      if (rdd(comienzo).mts1 == false && rdd(comienzo).mts2 == false &&  rdd(comienzo).mts3 == false){
           printf("Los tres heaters están apagados \n\n")
           writer.write("Los tres heaters están apagados \n\n")
-      }else if (rdd(y).mts1 == false && rdd(y).mts2 == false && rdd(y).mts3 == true){
+      }else if (rdd(comienzo).mts1 == false && rdd(comienzo).mts2 == false && rdd(comienzo).mts3 == true){
           printf("Heaters apagados: MTS1 y MTS2   ||   Heaters encendidos: MTS3 \n\n")
           writer.write("Heaters apagados: MTS1 y MTS2   ||   Heaters encendidos: MTS3 \n\n")
-      }else if (rdd(y).mts1 == false &&  rdd(y).mts2 == true &&  rdd(y).mts3 == false){
+      }else if (rdd(comienzo).mts1 == false &&  rdd(comienzo).mts2 == true &&  rdd(comienzo).mts3 == false){
           printf("Heaters apagados: MTS1 y MTS3  ||   Heaters encendidos: MTS2 \n\n")
           writer.write("Heaters apagados: MTS1 y MTS3  ||   Heaters encendidos: MTS2 \n\n")
-      }else if (rdd(y).mts1 == false &&  rdd(y).mts2 == true &&  rdd(y).mts3 == true){
+      }else if (rdd(comienzo).mts1 == false &&  rdd(comienzo).mts2 == true &&  rdd(comienzo).mts3 == true){
           printf("Heaters apagados: MTS1   ||   Heaters encendidos: MTS2 y MTS3 \n\n")
           writer.write("Heaters apagados: MTS1   ||   Heaters encendidos: MTS2 y MTS3 \n\n")
-      }else if (rdd(y).mts1 == true &&  rdd(y).mts2 == false &&  rdd(y).mts3 == false){
+      }else if (rdd(comienzo).mts1 == true &&  rdd(comienzo).mts2 == false &&  rdd(comienzo).mts3 == false){
           printf("Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 \n\n")
           writer.write("Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 \n\n")
-      }else if (rdd(y).mts1 == true &&  rdd(y).mts2 == false &&  rdd(y).mts3 == true){
+      }else if (rdd(comienzo).mts1 == true &&  rdd(comienzo).mts2 == false &&  rdd(comienzo).mts3 == true){
           printf("Heaters apagados:  MTS1 y MTS3  ||   Heaters encendidos: MTS2 \n\n")
           writer.write("Heaters apagados:  MTS1 y MTS3  ||   Heaters encendidos: MTS2 \n\n")
-      }else if (rdd(y).mts1 == true &&  rdd(y).mts2 == true &&  rdd(y).mts3 == false){
+      }else if (rdd(comienzo).mts1 == true &&  rdd(comienzo).mts2 == true &&  rdd(comienzo).mts3 == false){
           printf("Heaters apagados:  MTS3  ||   Heaters encendidos: MTS1 y MTS2 \n\n")
           writer.write("Heaters apagados:  MTS3  ||   Heaters encendidos: MTS1 y MTS2 \n\n")
       }else{ printf("Los tres heaters están encendidos \n\n")
           writer.write("Los tres heaters están encendidos \n\n")}
 
-      comienzo = d+1
-
+          comienzo = d + 1
     }
 
   }

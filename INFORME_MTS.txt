@@ -2,7 +2,7 @@
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INICIO DEL INFORME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-COBERTURAS DISPONIBLES PARA ANALISIS:  1
+COBERTURAS DISPONIBLES PARA ANALISIS:  2
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TIEMPOS ELEGIDOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -32,65 +32,15 @@ HEATERS
 
 Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 
 
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:53:48.433344
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:52:49.672439
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:52:21.543093
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:51:19.140427
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:50:43.631275
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:48:57.917609
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:47:20.255021
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:46:10.129974
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:45:34.444642
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:44:34.254496
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:44:02.583549
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:42:18.665424
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:40:48.328654
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:39:12.662442
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:37:36.609018
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:35:52.992752
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:34:24.757479
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:32:39.144404
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:31:08.279038
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:29:24.973119
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:27:52.718340
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:26:07.042128
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:24:29.344642
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:20:11.657889
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:19:43.640180
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:22.802538
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:19.841237
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:15.044430
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:12.235723
-
+Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:22.802538 
+ Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:19.841237 
+ Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:15.044430 
+ Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:12.235723 
+ 
 
  Verificación actual: CHECK_HEATER_2
 
@@ -100,49 +50,37 @@ Se han contabilizad  1659 medidas de MTSExperiment entre los intervalos 2020-05-
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>PASOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-Paso actual:  7
+Paso actual:  1
 
-Comienzo:  2020-05-07 05:21:21
+Comienzo:  2020-05-06 20:32:14
 
-Final:  2020-05-07 05:21:21
+Final:  2020-05-06 21:40:33
 
-Duración:  8 horas 
-
-HEATERS 
-
-Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 
-
-Paso actual:  6
-
-Comienzo:  2020-05-07 03:47:32
-
-Final:  2020-05-07 03:47:32
-
-Duración:  7 horas 
+Duración:  68 horas 
 
 HEATERS 
 
-Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 
+Los tres heaters están apagados 
 
-Paso actual:  5
+Paso actual:  1
 
-Comienzo:  2020-05-07 02:17:48
+Comienzo:  2020-05-06 21:40:33
 
-Final:  2020-05-07 02:17:48
+Final:  2020-05-06 23:14:18
 
-Duración:  5 horas 
+Duración:  93 horas 
 
 HEATERS 
 
-Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 
+Los tres heaters están apagados 
 
-Paso actual:  4
+Paso actual:  2
 
-Comienzo:  2020-05-07 00:44:00
+Comienzo:  2020-05-06 23:10:13
 
 Final:  2020-05-07 00:44:00
 
-Duración:  4 horas 
+Duración:  93 horas 
 
 HEATERS 
 
@@ -150,27 +88,39 @@ Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1
 
 Paso actual:  3
 
-Comienzo:  2020-05-06 23:14:18
+Comienzo:  2020-05-07 00:44:00
 
-Final:  2020-05-06 23:14:18
+Final:  2020-05-07 02:17:48
 
-Duración:  2 horas 
+Duración:  93 horas 
+
+HEATERS 
+
+Heaters apagados: MTS1   ||   Heaters encendidos: MTS2 y MTS3 
+
+Paso actual:  4
+
+Comienzo:  2020-05-07 02:13:43
+
+Final:  2020-05-07 03:47:32
+
+Duración:  93 horas 
 
 HEATERS 
 
 Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 
 
-Paso actual:  2
+Paso actual:  5
 
-Comienzo:  2020-05-06 21:40:33
+Comienzo:  2020-05-07 03:47:32
 
-Final:  2020-05-06 21:40:33
+Final:  2020-05-07 05:21:21
 
-Duración:  1 horas 
+Duración:  93 horas 
 
 HEATERS 
 
-Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 
+Heaters apagados: MTS1   ||   Heaters encendidos: MTS2 y MTS3 
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INFORMACION GENERAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -188,65 +138,15 @@ HEATERS
 
 Heaters apagados: MTS2 y MTS3  ||   Heaters encendidos: MTS1 
 
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:53:48.433344
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:52:49.672439
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:52:21.543093
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:51:19.140427
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:50:43.631275
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:48:57.917609
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:47:20.255021
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:46:10.129974
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:45:34.444642
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:44:34.254496
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:44:02.583549
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:42:18.665424
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:40:48.328654
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:39:12.662442
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:37:36.609018
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:35:52.992752
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:34:24.757479
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:32:39.144404
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:31:08.279038
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:29:24.973119
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:27:52.718340
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:26:07.042128
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:24:29.344642
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:20:11.657889
-Fallo por congelamiento del amoníaco en el MTS recibido el       
-2020-05-09 13:19:43.640180
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:22.802538
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:19.841237
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:15.044430
-Fallo por sobrecalentamiento del evaporador en el MTS recibido el       
-2020-05-09 12:58:12.235723
-
+Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:22.802538 
+ Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:19.841237 
+ Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:15.044430 
+ Fallo por sobrecalentamiento del evaporador en el MTS  el       
+2020-05-07 09:52:08 recibido el 2020-05-09 12:58:12.235723 
+ 
 
  Verificación actual: CHECK_HEATER_3
 

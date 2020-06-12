@@ -2,14 +2,14 @@
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>INICIO DEL INFORME<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-COBERTURAS DISPONIBLES PARA ANALISIS:  1
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 TIEMPOS ELEGIDOS
 
 valorTiempo5 =  2020-05-09 10:31:16.664029
 valorTiempo6 =  2020-05-09 14:44:09.060707
+COBERTURAS DISPONIBLES PARA ANALISIS:  1
+
 
 
 
@@ -17,7 +17,7 @@ valorTiempo6 =  2020-05-09 14:44:09.060707
 DATOS GENERALES
 
 
- NUMERO DE ORBITAS ENTRE  2020-05-09 10:31:16.664029-2020-05-09 14:44:09.060707:35/n/n
+ NUMERO DE ORBITAS ENTRE  2020-05-07 05:24:10-2020-05-09 14:44:09:35/n/n
 
 DESDE  2020-05-09 10:31:16.664029 HASTA: 2020-05-09 14:44:09.060707
 
@@ -37,7 +37,7 @@ HOUSEKEEPING
 >>>SE HAN ALCANZADO  99 VALORES FUERA DE RANGO DE BATT_TBAT3_TM DE HOUSEKEEPING
 
 >>>SE HAN CONTABILIZAD  8 CAMBIOS DE MODO DE OPERACION
->>>>>>>>>Fecha:  2020-05-09 14:44:09.060707 || Último modo de operacion: NOMINAL
+>>>>>>>>>Fecha:  2020-05-09 14:44:09 || Último modo de operacion: NOMINAL
 
 
 
@@ -53,7 +53,7 @@ HELLO
 >>>SE HAN ALCANZADO  221 VALORES FUERA DE RANGO DE BATT_TBAT3_TM DE HELLO
 
 >>>SE HAN CONTABILIZAD  3 CAMBIOS DE MODO DE OPERACION
->>>>>>>>>Fecha:  2020-05-09 14:44:09.060707 || Último modo de operacion: NOMINAL
+>>>>>>>>>Fecha:  2020-05-09 14:44:09 || Último modo de operacion: NOMINAL
 
 
 
@@ -87,7 +87,7 @@ EVENTS
 ------------------------------------------------------------------------------------------------------------------------------------------
 ULTIMO ESTADO DEL SATELITE:
 
-HORA:  2020-05-09 14:44:09.060707 ||  BATT_T_EXT_TM: 79 ||  BATT_T_INT_TM: 76 ||  BATT_TBAT1_TM: 4095 ||  BATT_TBAT2_TM: 4095 ||  BATT_TBAT3_TM: 4095
+HORA:  2020-05-09 14:44:09 ||  BATT_T_EXT_TM: 79 ||  BATT_T_INT_TM: 76 ||  BATT_TBAT1_TM: 4095 ||  BATT_TBAT2_TM: 4095 ||  BATT_TBAT3_TM: 4095
 Modo de operacion: NOMINAL
 
 

@@ -95,6 +95,42 @@ def convertStringToLong(date: String): Long = {
       (convertStringToDate(date).getTime())/1000
 
   }
+
+  writer.write("\n------------------------------------------------------------------------------------------------------------------------------------------\nTIEMPOS ELEGIDOS\n\n")
+
+
+
+  var t5 = "2020-05-09 10:31:16.664029"
+  var t6 = "2020-05-09 14:44:09.060707"
+
+
+  val t5String : String = t5 + ""
+  var t6String : String = t6 + ""
+
+
+  writer.write("valorTiempo5 =  " + t5 + "\n")
+  writer.write("valorTiempo6 =  "  + t6 + "\n")
+
+  var posUltimo = 0;
+  var reftimem = 0;
+  var reftimet = "";
+
+  for (y <- 0 until rdd2.length-1){
+      if(rdd2(y).time_received == t6){
+          posUltimo = y
+          reftimem = rdd2(y).mission_time
+          reftimet = rdd2(y).time_received
+
+      }
+  }
+
+  def diftiempos(time : Int): String = {
+          val f  = reftimem - time
+          val f2 = ((convertStringToDate(reftimet).getTime())/1000) - ((f/4).toLong)
+          convertLongToString(f2)
+
+
+      }
 //-------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -123,7 +159,7 @@ writer.write("COBERTURAS DISPONIBLES PARA ANALISIS:  " + indices.length/2 + "\n\
 
 printf("HELLO:\n")
 for (y <- (0 until indices.length-1 by 2).reverse){
-    printf("%s   -   %s\n",rdd2(indices(y+1)).time_received, rdd2(indices(y)).time_received)
+    printf("%s   -   %s\n",diftiempos(rdd2(indices(y+1)).mission_time), diftiempos(rdd2(indices(y)).mission_time))
 
 
 }
@@ -161,46 +197,9 @@ var t6 = z.select("FINAL HELLO", nums3)
 */
 
 
-writer.write("\n------------------------------------------------------------------------------------------------------------------------------------------\nTIEMPOS ELEGIDOS\n\n")
 
-
-
-var t5 = "2020-05-09 10:31:16.664029"
-var t6 = "2020-05-09 14:44:09.060707"
-
-var posUltimo = 0;
-var reftimem = 0;
-var reftimet = "";
-
-for (y <- 0 until rdd2.length-1){
-    if(rdd3(y).time_received == t6){
-        posUltimo = y
-        reftimem = rdd3(y).mission_time
-        reftimet = rdd3(y).time_received
-
-    }
-}
-
-def diftiempos(time : Int): String = {
-        val f  = reftimem - time
-        val f2 = ((convertStringToDate(reftimet).getTime())/1000) - ((f/4).toLong)
-        convertLongToString(f2)
-
-
-    }
-
-
-
-
-val t5String : String = t5 + ""
-var t6String : String = t6 + ""
-
-
-writer.write("valorTiempo5 =  " + t5 + "\n")
-writer.write("valorTiempo6 =  "  + t6 + "\n")
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 
@@ -226,8 +225,8 @@ printf("\n\n\n\n")
 for (y <- (1 until indices.size by 2).reverse){
     var auxx = ((rdd2(indices(y-1)).mission_time - rdd2(indices(y)).mission_time) / (60 * 60 * 4) / 1.61)
     orbitas += (auxx).toInt
-    printf("NUMERO DE ORBITAS ENTRE %s   -   %s: %s\n", rdd2(indices(y)).time_received, rdd2(indices(y-1)).time_received,orbitas(iteracion))
-    writer.write("\n NUMERO DE ORBITAS ENTRE  " +    rdd2(indices(y)).time_received  + "-" + rdd2(indices(y-1)).time_received + ":" + orbitas(iteracion) + "/n/n")
+    printf("NUMERO DE ORBITAS ENTRE %s   -   %s: %s\n", diftiempos(rdd2(indices(y)).mission_time), diftiempos(rdd2(indices(y-1)).mission_time),orbitas(iteracion))
+    writer.write("\n NUMERO DE ORBITAS ENTRE  " +    diftiempos(rdd2(indices(y)).mission_time) + "-" + diftiempos(rdd2(indices(y-1)).mission_time) + ":" + orbitas(iteracion) + "/n/n")
 
     iteracion = iteracion + 1
 
@@ -493,8 +492,8 @@ writer.write("\n>>>SE HAN CONTABILIZAD  " +   x7  + " CAMBIOS DE MODO DE OPERACI
 
 
 
-printf(">>>>>>Fecha: %s || Último modo de operacion: %s\n\n\n", rdd2(linf3).time_received, rdd2(linf3).current_operating_mode)
-writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: " + rdd2(linf3).current_operating_mode + "\n\n\n")
+printf(">>>>>>Fecha: %s || Último modo de operacion: %s\n\n\n", diftiempos(rdd2(linf3).mission_time), rdd2(linf3).current_operating_mode)
+writer.write(">>>>>>>>>Fecha:  " +   diftiempos(rdd2(linf3).mission_time)  + " || Último modo de operacion: " + rdd2(linf3).current_operating_mode + "\n\n\n")
 
 
 printf("\n\n------------------------------------------------------------------------------------------------------------------------------------------\nHELLO\n\n")
@@ -520,8 +519,8 @@ writer.write("\n>>>SE HAN CONTABILIZAD  " +   x71  + " CAMBIOS DE MODO DE OPERAC
 
 
 
-printf(">>>>>>Fecha: %s || Último modo de operacion: %s\n\n\n", rdd2(linf3).time_received, rdd2(linf3).current_operating_mode)
-writer.write(">>>>>>>>>Fecha:  " +   rdd2(linf3).time_received  + " || Último modo de operacion: " + rdd2(linf3).current_operating_mode + "\n\n\n")
+printf(">>>>>>Fecha: %s || Último modo de operacion: %s\n\n\n", diftiempos(rdd2(linf3).mission_time), rdd2(linf3).current_operating_mode)
+writer.write(">>>>>>>>>Fecha:  " +   diftiempos(rdd2(linf3).mission_time)  + " || Último modo de operacion: " + rdd2(linf3).current_operating_mode + "\n\n\n")
 
 
 
@@ -579,14 +578,14 @@ writer.write(">>>SE HAN CONTABILIZADO  " +   contador19  + " ESTADOS RADIOHWERRO
 
 printf("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------\n")
 printf("ULTIMO ESTADO DEL SATELITE:\n\n")
-printf("HORA: %s,     BATT_T_EXT_TM: %s,     BATT_T_INT_TM: %s,    BATT_TBAT1_TM: %s,    BATT_TBAT2_TM: %s,   BATT_TBAT3_TM: %s\n", rdd2(posUltimo).time_received, rdd2(posUltimo).batt_t_ext_tm, rdd2(posUltimo).batt_t_int_tm, rdd2(posUltimo).batt_tbat1_tm, rdd2(posUltimo).batt_tbat2_tm, rdd2(posUltimo).batt_tbat3_tm)
+printf("HORA: %s,     BATT_T_EXT_TM: %s,     BATT_T_INT_TM: %s,    BATT_TBAT1_TM: %s,    BATT_TBAT2_TM: %s,   BATT_TBAT3_TM: %s\n", diftiempos(rdd2(posUltimo).mission_time), rdd2(posUltimo).batt_t_ext_tm, rdd2(posUltimo).batt_t_int_tm, rdd2(posUltimo).batt_tbat1_tm, rdd2(posUltimo).batt_tbat2_tm, rdd2(posUltimo).batt_tbat3_tm)
 printf("Modo de operacion: %s \n\n\n", rdd2(posUltimo).current_operating_mode)
 
 
 
 writer.write("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------\n")
 writer.write("ULTIMO ESTADO DEL SATELITE:\n\n")
-writer.write("HORA:  " +    rdd2(posUltimo).time_received  + " ||  BATT_T_EXT_TM: " + rdd2(posUltimo).batt_t_ext_tm + " ||  BATT_T_INT_TM: " + rdd2(posUltimo).batt_t_int_tm + " ||  BATT_TBAT1_TM: " + rdd2(posUltimo).batt_tbat1_tm +  " ||  BATT_TBAT2_TM: " + rdd2(posUltimo).batt_tbat2_tm + " ||  BATT_TBAT3_TM: " + rdd2(posUltimo).batt_tbat3_tm + "\n")
+writer.write("HORA:  " +    diftiempos(rdd2(posUltimo).mission_time)  + " ||  BATT_T_EXT_TM: " + rdd2(posUltimo).batt_t_ext_tm + " ||  BATT_T_INT_TM: " + rdd2(posUltimo).batt_t_int_tm + " ||  BATT_TBAT1_TM: " + rdd2(posUltimo).batt_tbat1_tm +  " ||  BATT_TBAT2_TM: " + rdd2(posUltimo).batt_tbat2_tm + " ||  BATT_TBAT3_TM: " + rdd2(posUltimo).batt_tbat3_tm + "\n")
 writer.write("Modo de operacion: " + rdd2(posUltimo).current_operating_mode + "\n\n\n")
 
 
