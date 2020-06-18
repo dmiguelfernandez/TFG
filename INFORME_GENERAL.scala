@@ -131,78 +131,6 @@ def convertStringToLong(date: String): Long = {
 
 
       }
-//-------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-var tiemposHelloLength = tiemposHello.length
-var tiemposHousekeepingLength = tiemposHousekeeping.length
-
-
-
-//--------------------------------------------MEDIDOR DE DIFERENCIAS ENTRE TIEMPOS------------------------------------------------------
-indices += 0
-for (y <- 0 until tiemposHelloLength-1){
-    if (((convertStringToDate(tiemposHello(y)).getTime() - convertStringToDate(tiemposHello(y+1)).getTime())/(60 * 60 * 1000)) > 1) {
-    indices += y
-    indices += y+1
-    }
-}
-indices += xx-1
-//--------------------------------------------------------------------------------------------------------------------------------------
-
-printf("COBERTURAS DISPONIBLES PARA ANALISIS: %s \n\n", indices.length/2)
-
-writer.write("COBERTURAS DISPONIBLES PARA ANALISIS:  " + indices.length/2 + "\n\n")
-
-
-
-printf("HELLO:\n")
-for (y <- (0 until indices.length-1 by 2).reverse){
-    printf("%s   -   %s\n",diftiempos(rdd2(indices(y+1)).mission_time), diftiempos(rdd2(indices(y)).mission_time))
-
-
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-var nums: Map[String,String] = Map()
-var nums2: Map[String,String] = Map()
-var nums3: Map[String,String] = Map()
-var nums4: Map[String,String] = Map()
-
-
-
-
-for(y <- (0 until indices.length-1 by 2).reverse){
-    var nums2: Map[String,String] = Map(rdd2(indices(y+1)).time_received->rdd2(indices(y+1)).time_received)
-    nums = nums ++ nums2
-}
-
-var t5 = z.select("INICIO HELLO",nums)
-
-
-
-
-for(y <- (0 until indices.length-1 by 2).reverse){
-    var nums4: Map[String,String] = Map(rdd2(indices(y)).time_received->rdd2(indices(y)).time_received)
-    nums3 = nums3 ++ nums4
-}
-
-var t6 = z.select("FINAL HELLO", nums3)
-
-
-*/
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 writer.write("\n\n\n------------------------------------------------------------------------------------------------------------------------------------------\nDATOS GENERALES\n\n")
 
 for (y <- 0 until x) if (rdd(y).time_received > t5){ lsup2 = y;}
@@ -211,11 +139,6 @@ for (y <- 0 until xx) if (rdd2(y).time_received >= t5){ lsup3 = y;}
 for (y <- (0 until xx).reverse) if (rdd2(y).time_received <= t6){ linf3 = y;}
 for (y <- 0 until xxx) if (rdd3(y).time_received > t5){ lsup1 = y;}
 for (y <- (0 until xxx).reverse) if (rdd3(y).time_received < t6){ linf1 = y;}
-
-
-printf("%s a %s\n",linf1,lsup1)
-printf("%s a %s\n",linf2,lsup2)
-printf("%s a %s\n",linf3,lsup3)
 
 
 
@@ -233,12 +156,6 @@ for (y <- (1 until indices.size by 2).reverse){
 }
 
 printf("\n\n\n")
-
-
-
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -258,19 +175,6 @@ for (y <- 0 until xx)
     }
 
 
-/*
-
-val collection = sc.parallelize(Seq(("BATT_T_EXT_TM HOUSEKEEPING",x2,(x-x2),1)))
-collection.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-val collection2 = sc.parallelize(Seq(("BATT_T_EXT_TM HELLO",x21,(xx-x21),2)))
-collection2.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
-
 for (y <- 0 until x)
     if (y >= linf2 && y <= lsup2 && (rdd(y).batt_t_int_tm >= 866 || rdd(y).batt_t_int_tm <= 1971)){
         x3 = x3 + 1
@@ -282,16 +186,6 @@ for (y <- 1 until xx)
         }
 
 
-/*
-val collection3 = sc.parallelize(Seq(("BATT_T_INT_TM HOUSEKEEPING",x3,(x-x3),3)))
-collection3.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-val collection4 = sc.parallelize(Seq(("BATT_T_INT_TM HELLO",x31,(xx-x31),4)))
-collection4.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
 
 for (y <- 1 until x)
     if (y >= linf2 && y <= lsup2 &&  (rdd(y).batt_tbat1_tm <= 866 || rdd(y).batt_tbat1_tm >= 1971)){
@@ -305,18 +199,6 @@ for (y <- 1 until xx)
 
 
 
-/*
-val collection5 = sc.parallelize(Seq(("BATT_TBAT1_TM HOUSEKEEPING",x4,(x-x4),5)))
-collection5.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-val collection6 = sc.parallelize(Seq(("BATT_TBAT1_TM HELLO",x41,(xx-x41),6)))
-collection6.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-*/
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 for (y <- 1 until x)
     if (y >= linf2 && y <= lsup2 && (rdd(y).batt_tbat2_tm <= 866 || rdd(y).batt_tbat2_tm >= 1971)){
         x5 = x5 + 1
@@ -327,16 +209,6 @@ for (y <- 1 until xx)
         x51 = x51 + 1
     }
 
-/*
-val collection7 = sc.parallelize(Seq(("BATT_TBAT2_TM HOUSEKEEPING",x5,(x-x5),7)))
-collection7.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-val collection8 = sc.parallelize(Seq(("BATT_TBAT2_TM HELLO",x51,(xx-x51),8)))
-collection8.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-
-*/
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 for (y <- 1 until x)
@@ -350,14 +222,6 @@ for (y <- 1 until xx)
     }
 
 
-
-/*
-val collection9 = sc.parallelize(Seq(("BATT_TBAT3_TM HOUSEKEEPING",x6,(x-x6),9)))
-collection9.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-val collection10 = sc.parallelize(Seq(("BATT_TBAT3_TM HELLO",x61,(xx-x61),10)))
-collection10.saveToCassandra("prototipodb", "pres1", SomeColumns("tipo","fuerarango", "dentrorango","id"))
-
-*/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -521,10 +385,6 @@ writer.write("\n>>>SE HAN CONTABILIZAD  " +   x71  + " CAMBIOS DE MODO DE OPERAC
 
 printf(">>>>>>Fecha: %s || Último modo de operacion: %s\n\n\n", diftiempos(rdd2(linf3).mission_time), rdd2(linf3).current_operating_mode)
 writer.write(">>>>>>>>>Fecha:  " +   diftiempos(rdd2(linf3).mission_time)  + " || Último modo de operacion: " + rdd2(linf3).current_operating_mode + "\n\n\n")
-
-
-
-
 
 
 

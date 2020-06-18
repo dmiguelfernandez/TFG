@@ -103,24 +103,6 @@ for (y <- (0 until indices.length-1 by 2).reverse){
 var tiemposMTSLength = tiemposMTS.length
 var tiemposHelloLength = tiemposHello.length
 
-/*
-//--------------------------------------------MEDIDOR DE DIFERENCIAS ENTRE TIEMPOS------------------------------------------------------
-indices += 0
-for (y <- 0 until tiemposMTSLength-1){
-
-    var fff = Math.abs((convertStringToDate(tiemposMTS(y))).getTime() - (convertStringToDate(tiemposMTS(y+1))).getTime())
-    var fz = TimeUnit.MILLISECONDS.toMinutes(fff)
-    if (fz > 15) {
-
-      indices += y
-      indices += y+1
-    }
-}
-indices += x-1
-//--------------------------------------------------------------------------------------------------------------------------------------
-
-
-*/
 printf("\n\n\n")
 
 printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TIEMPOS ELEGIDOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n")
@@ -190,17 +172,6 @@ for (y <- 1 until tiemposMTSLength-1){
 }
 ensayos += x-1
 
-/*
-var estimacion_time: Long = 0
-
-for (y <- 0 until x){
-
-    estimacion_time = estimacion_time + convertStringToLong(rdd(y).time_received) - rdd(y).mission_clock.toLong
-
-  }
-
-estimacion_time = estimacion_time/(x.toLong)
-*/
 
 
 for (y <- (0 until ensayos.length by 2).reverse){
@@ -369,100 +340,8 @@ for (a <- ensayos(y) until ensayos(y+1)){
 
 } } }
 
-///////////////////////////////////////////////////////////////////////////////////
-/*
-var nums: Map[String,String] = Map()
-var nums2: Map[String,String] = Map()
-var nums3: Map[String,String] = Map()
-var nums4: Map[String,String] = Map()
-
-
-
-for(y <- (0 until indices.length-1 by 2).reverse){
-  printf("%s \n",y)
-    var nums2: Map[String,String] = Map(rdd(indices(y+1)).time_received->rdd(indices(y+1)).time_received)
-    nums = nums ++ nums2
-}
-
-//var t5 = z.select("INICIO HELLO",nums)
-
-
-
-for(y <- (0 until indices.length-1 by 2).reverse){
-  printf("%s \n",y)
-    var nums4: Map[String,String] = Map(rdd(indices(y)).time_received->rdd(indices(y)).time_received)
-    nums3 = nums3 ++ nums4
-    printf("%s \n",nums3)
-}
-printf("%s \n",nums3)
-
-var t6 = z.select("FINAL HELLO", nums3)
-
-*/
-
-
-
-
-
-
-
-
-/*
-for (y <- 1 until x-1){
-
-            if (rdd(y).mts1 == true && rdd(y).mts2 == true && rdd(y).mts3 == true){
-            printf("Entre   %s   y   %s  se pasa a combinación %s con éxito.\n",rdd(y).time_received.slice(0,19), rdd(y-1).time_received.slice(0,19), 5)
-            printf("Current step: %s\n", rdd(y).current_step)
-            printf("Tiempo transcurrido: %s milisegundos\n", Math.abs((convertStringToDate(tiemposMTS(y-1))).getTime() - (convertStringToDate(tiemposMTS(y))).getTime()) )
-            val collection = sc.parallelize(Seq((rdd(y).mission_clock,183)))
-            collection.saveToCassandra("prototipodb", "pres2", SomeColumns("time_received","combinacion"))
-
-        } else if (rdd(y).mts1 == false && rdd(y).mts2 == false && rdd(y).mts3 == false){
-
-            val collection2 = sc.parallelize(Seq((rdd(y).mission_clock,0)))
-            collection2.saveToCassandra("prototipodb", "pres2", SomeColumns("time_received","combinacion"))
-
-        } else if (rdd(y).mts1 == true && rdd(y).mts2 == false && rdd(y).mts3 == false){
-
-            val collection3 = sc.parallelize(Seq((rdd(y).mission_clock,37)))
-            collection3.saveToCassandra("prototipodb", "pres2", SomeColumns("time_received","combinacion"))
-
-        } else if (rdd(y).mts1 == false && rdd(y).mts2 == true && rdd(y).mts3 == false){
-
-            val collection4 = sc.parallelize(Seq((rdd(y).mission_clock,73)))
-            collection4.saveToCassandra("prototipodb", "pres2", SomeColumns("time_received","combinacion"))
-
-        } else if (rdd(y).mts1 == true && rdd(y).mts2 == true && rdd(y).mts3 == false){
-
-            val collection5 = sc.parallelize(Seq((rdd(y).mission_clock,110)))
-            collection5.saveToCassandra("prototipodb", "pres2", SomeColumns("time_received","combinacion"))
-
-        } else if (rdd(y).mts1 == false && rdd(y).mts2 == true && rdd(y).mts3 == true){
-
-            val collection6 = sc.parallelize(Seq((rdd(y).mission_clock,146)))
-            collection6.saveToCassandra("prototipodb", "pres2", SomeColumns("time_received","combinacion"))
-
-        } else if (rdd(y).mts1 == false && rdd(y).mts2 == false && rdd(y).mts3 == true){
-
-            val collection7 = sc.parallelize(Seq((rdd(y).mission_clock,73)))
-            collection7.saveToCassandra("prototipodb", "pres2", SomeColumns("time_received","combinacion"))
-        }
-
-    }
-*/
-
-
-
-
-
-
-
 printf("\n\n\n")
 
-
-
-
-printf("\n")
 
 printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ANALISIS REALIZADO CORRECTAMENTE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n")
 
