@@ -75,6 +75,8 @@ for (y <- 0 until xx){
     tiemposHello += rdd2(y).time_received
 }
 
+var tiemposMTSLength = tiemposMTS.length
+var tiemposHelloLength = tiemposHello.length
 val indices = ArrayBuffer[Int]()
 
 indices += 0
@@ -94,14 +96,16 @@ writer.write("COBERTURAS DISPONIBLES PARA ANALISIS:  " + indices.length/2 + "\n\
 
 
 printf("HELLO:\n")
+writer.write("HELLO: \n\n")
 for (y <- (0 until indices.length-1 by 2).reverse){
-    printf("%s   -   %s\n",rdd2(indices(y+1)).time_received, rdd2(indices(y)).time_received)}
+    printf("%s   -   %s\n",rdd2(indices(y+1)).time_received, rdd2(indices(y)).time_received)
+    writer.write( rdd2(indices(y+1)).time_received + "  -  " + rdd2(indices(y)).time_received + " \n\n ")}
 
 
 
 
-var tiemposMTSLength = tiemposMTS.length
-var tiemposHelloLength = tiemposHello.length
+
+
 
 printf("\n\n\n")
 
